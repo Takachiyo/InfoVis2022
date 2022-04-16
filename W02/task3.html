@@ -58,7 +58,11 @@
                 b = v2.sub(v1)
                 cross = a.cross(b);
                 S = cross.length()/2;
-                document.getElementById("target1").innerHTML = String( S );
+                //document.getElementById("target1").innerHTML = String( S );
+                document.getElementById("target1").innerHTML = String( cross.x );
+                document.getElementById("target2").innerHTML = String( cross.y );
+                document.getElementById("target3").innerHTML = String( cross.z );
+
                 /*
                 document.getElementById("target1").innerHTML = String( a.x );
                 document.getElementById("target2").innerHTML = String( a.y );
@@ -70,17 +74,6 @@
 
                 //var S = AreaOfTriangle( v0, v1, v2 );
                 //const number2 = document.getElementById("number2");
-                /*
-                document.getElementById("target1").innerHTML = String( x0 );
-                document.getElementById("target2").innerHTML = String( y0 );
-                document.getElementById("target3").innerHTML = String( z0 );
-                document.getElementById("target4").innerHTML = String( x1 );
-                document.getElementById("target5").innerHTML = String( y1 );
-                document.getElementById("target6").innerHTML = String( z1 );
-                document.getElementById("target7").innerHTML = String( x2 );
-                document.getElementById("target8").innerHTML = String( y2 );
-                document.getElementById("target9").innerHTML = String( z2 );
-                */
             }
         </script>
     </body>
