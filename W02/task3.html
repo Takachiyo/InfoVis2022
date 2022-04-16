@@ -17,9 +17,17 @@
         <input type="number" id="x2">
         <input type="number" id="y2">
         <input type="number" id="z2">
-        <input type="button" onclick="e()" value="Calculate1"/>
+        <input type="button" onclick="e()" value="Calculate"/>
         <p>the area of a triangle : </p> 
-        <p id="target"></p>
+        <p id="target1"></p>
+        <p id="target2"></p>
+        <p id="target3"></p>
+        <p id="target4"></p>
+        <p id="target5"></p>
+        <p id="target6"></p>
+        <p id="target7"></p>
+        <p id="target8"></p>
+        <p id="target9"></p>
         <script src="vec3.js"></script>
         <script>
             function AreaOfTriangle( v0, v1, v2 ){
@@ -52,12 +60,21 @@
                 var b = new Vec3( 0, 0, 0 );
                 a = v0.sub(v1)
                 b = v0.sub(v2)
-                x = a.x
-                var result = String( x );
+                //var result = String( x );
                 //var S = AreaOfTriangle( v0, v1, v2 );
                 //const number2 = document.getElementById("number2");
-                document.getElementById("target").innerHTML = result;
+                document.getElementById("target1").innerHTML = String( x0 );
+                /*
+                document.getElementById("target2").innerHTML = result;
+                document.getElementById("target3").innerHTML = result;
+                document.getElementById("target4").innerHTML = result;
+                document.getElementById("target5").innerHTML = result;
+                document.getElementById("target6").innerHTML = result;
+                document.getElementById("target7").innerHTML = result;
+                document.getElementById("target8").innerHTML = result;
+                document.getElementById("target9").innerHTML = result;
                 //document.write(S);
+                */
             }
         </script>
     </body>
