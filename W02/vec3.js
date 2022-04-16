@@ -6,32 +6,19 @@ class Vec3
         this.y = y;
         this.z = z;
     }
-
-    getX() {
-        return this.x;
-    }
-
-    getY() {
-        return this.y;
-    }
-
-    getZ() {
-        return this.z;
-    }
-
     add( v )
     {
-        this.x += v.getX();
-        this.y += v.getY();
-        this.z += v.getZ();
+        this.x += v.x;
+        this.y += v.y;
+        this.z += v.z;
         return this;
     }
 
     sub( v )
     {
-        this.x -= v.getX();
-        this.y -= v.getY();
-        this.z -= v.getZ();
+        this.x -= v.x;
+        this.y -= v.y;
+        this.z -= v.z;
         return this;
     }
 
@@ -61,9 +48,9 @@ class Vec3
     cross( v )
     {
         var x = this.x, y = this.y, z = this.z;
-        this.x = y * v.getZ() - z * v.getY();
-        this.y = z * v.getX() - x * v.getZ();
-        this.z = x * v.getY() - y * v.getX();
+        this.x = y * v.z - z * v.y;
+        this.y = z * v.x - x * v.z;
+        this.z = x * v.y - y * v.x;
         return this;
     }
 
