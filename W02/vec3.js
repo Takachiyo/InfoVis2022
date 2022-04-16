@@ -60,5 +60,17 @@ class Vec3
     {
         return Math.sqrt( this.x * this.x + this.y * this.y + this.z * this.z );
     }
+
+    getX() {
+        return this.x;
+    }
+
+    getY() {
+        return this.y;
+    }
+
+    getZ() {
+        return this.z;
+    }
     
 }
