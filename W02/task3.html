@@ -56,12 +56,17 @@
                 var v2 = new Vec3( x2, y2, z2 );
                 a =  v1.sub(v0)
                 b = v2.sub(v1)
+                cross = a.cross(b);
+                S = cross.length()/2;
+                document.getElementById("target1").innerHTML = String( S );
+                /*
                 document.getElementById("target1").innerHTML = String( a.x );
                 document.getElementById("target2").innerHTML = String( a.y );
                 document.getElementById("target3").innerHTML = String( a.z );
                 document.getElementById("target4").innerHTML = String( b.x );
                 document.getElementById("target5").innerHTML = String( b.y );
                 document.getElementById("target6").innerHTML = String( b.z );
+                */
 
                 //var S = AreaOfTriangle( v0, v1, v2 );
                 //const number2 = document.getElementById("number2");
