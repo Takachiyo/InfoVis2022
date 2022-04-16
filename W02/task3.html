@@ -22,10 +22,10 @@
         <script src="vec3.js"></script>
         <script>
             function AreaOfTriangle( v0, v1, v2 ){
-                a = v0.sub(v1)
-                b = v0.sub(v2)
-                cross = a.cross(b);
-                S = cross.length()/2;
+                var a = v0.sub(v1)
+                var b = v0.sub(v2)
+                var cross = a.cross(b);
+                var S = cross.length()/2;
                 return S; 
             }
             function e(){
