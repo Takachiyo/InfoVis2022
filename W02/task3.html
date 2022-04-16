@@ -26,7 +26,7 @@
                 var b = v0.sub(v2)
                 var cross = a.cross(b);
                 var S = cross.length()/2;
-                return a; 
+                return S; 
             }
             function e(){
             var v0 = new Vec3( x0, y0, z0 );
@@ -35,7 +35,7 @@
             var S = AreaOfTriangle( v0, v1, v2 ); 
             //const number2 = document.getElementById("number2");
             //document.getElementById("span2").textContent = S.value;
-            document.write(AreaOfTriangle( v0, v1, v2 ));
+            document.write(S);
             }
         </script>
     </body>
