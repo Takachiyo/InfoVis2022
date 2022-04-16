@@ -54,27 +54,11 @@
                 var v0 = new Vec3( x0, y0, z0 );
                 var v1 = new Vec3( x1, y1, z1 );
                 var v2 = new Vec3( x2, y2, z2 );
-                a = v1.sub(v0)
-                b = v2.sub(v0)
-                cross = a.cross(b);
-                S = cross.length()/2;
+                var a = v1.sub(v0)
+                var b = v2.sub(v0)
+                var cross = a.cross(b);
+                var S = cross.length()/2;
                 document.getElementById("target1").innerHTML = String( S );
-                
-
-                
-                /*document.getElementById("target1").innerHTML = String( a.x );
-                document.getElementById("target2").innerHTML = String( a.y );
-                document.getElementById("target3").innerHTML = String( a.z );
-                document.getElementById("target4").innerHTML = String( b.x );
-                document.getElementById("target5").innerHTML = String( b.y );
-                document.getElementById("target6").innerHTML = String( b.z );
-                */
-                //document.getElementById("target7").innerHTML = String( cross.x );
-                //document.getElementById("target8").innerHTML = String( cross.y );
-                //document.getElementById("target9").innerHTML = String( cross.z );
-
-                //var S = AreaOfTriangle( v0, v1, v2 );
-                //const number2 = document.getElementById("number2");
             }
         </script>
     </body>
