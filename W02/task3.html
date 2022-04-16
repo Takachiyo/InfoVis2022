@@ -21,6 +21,13 @@
         <br>
         <input type="button" onclick="e()" value="Calculate"/>
         <script>
+            function AreaOfTriangle( v0, v1, v2 ){
+                var a = v0.sub(v1)
+                var b = v0.sub(v2)
+                var cross = a.cross(b);
+                var S = cross.length();
+                return 0; 
+            }
             function e(){
             var v0 = new Vec3( x0, y0, z0 );
             var v1 = new Vec3( x1, y1, z1 );
