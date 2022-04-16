@@ -17,7 +17,7 @@
         <input type="number" id="x2">
         <input type="number" id="y2">
         <input type="number" id="z2">
-        <input type="button" onclick="e()" value="Calculate"/>
+        <input type="button" onclick="e()" value="Calculate1"/>
         <p>the area of a triangle : <span id="result"></span></div></p>
         <script src="vec3.js"></script>
         <script>
@@ -26,16 +26,16 @@
                 var b = v0.sub(v2)
                 var cross = a.cross(b);
                 var S = cross.length()/2;
-                return S; 
+                return a; 
             }
             function e(){
             var v0 = new Vec3( x0, y0, z0 );
             var v1 = new Vec3( x1, y1, z1 );
             var v2 = new Vec3( x2, y2, z2 );
-            var S = AreaOfTriangle( v0, v1, v2 ); 
+            var a = AreaOfTriangle( v0, v1, v2 ); 
             //const number2 = document.getElementById("number2");
             //document.getElementById("span2").textContent = S.value;
-            document.write(S);
+            document.write(a.x);
             }
         </script>
     </body>
