@@ -10,14 +10,14 @@
 
      var padding = 10;
 	 var height = 20;
-	 d3.csv("https://takachiyo.github.io/InfoVis2022/W04/csv_pop_estimate_2045.csv", function(data){
+	 d3.csv("https://takachiyo.github.io/InfoVis2022/W04/w04_task2.csv", function(data){
 	    svg.selectAll("rect")
 		.data(data)
 	        .enter()
 	        .append("rect")
 	        .attr("x", 60)
             .attr("y", function(d,i){ return padding + i * ( height + padding ); })
-            .attr("width", function(d){ return d.人口2015年/1000; })
+            .attr("width", function(d){ return d.width; })
             .attr("height", height)
             .style("fill", function(d){ return d.color; });
 
@@ -28,7 +28,7 @@
 			.attr("class","barName")
 			.attr("x", 10)
 			.attr("y", function(d,i){ return 15 + padding + i * ( height + padding ); })
-			.text(function(d){return d.都道府県名; });
+			.text(function(d){return d.label; });
 	 } );
 	</script>
     </body>
