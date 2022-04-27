@@ -31,8 +31,7 @@ class ScatterPlot {
 
     init() {
         let self = this;
-        axis_top=10, axis_right=10, axis_bottom=20, axis_left=30;
-
+        
         self.svg = d3.select( self.config.parent )
             .attr('width', self.config.width)
             .attr('height', self.config.height);
