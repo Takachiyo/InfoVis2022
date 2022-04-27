@@ -31,6 +31,7 @@ class ScatterPlot {
 
     init() {
         let self = this;
+        axis_top=10, axis_right=10, axis_bottom=20, axis_left=30;
 
         self.svg = d3.select( self.config.parent )
             .attr('width', self.config.width)
@@ -43,10 +44,12 @@ class ScatterPlot {
         self.inner_height = self.config.height - self.config.margin.top - self.config.margin.bottom;
 
         self.xscale = d3.scaleLinear()
-            .range( [0, self.inner_width] );
+            //.range( [0, self.inner_width] );
+            .range( [-margin.left, self.inner_width] );
 
         self.yscale = d3.scaleLinear()
-            .range( [0, self.inner_height] );
+            //.range( [0, self.inner_height] );
+            .range( [0, self.inner_height + margin.bottom] );
 
         self.xaxis = d3.axisBottom( self.xscale )
             .ticks(6);
@@ -55,10 +58,12 @@ class ScatterPlot {
             .ticks(6);
 
         self.xaxis_group = self.chart.append('g')
-            .attr('transform', `translate(0, ${self.inner_height})`);
+            //.attr('transform', `translate(0, ${self.inner_height})`);
+            .attr('transform', `translate(${-margin.left}, ${self.inner_height + margin.bottom})`);
 
         self.yaxis_group = self.chart.append('g')
-            .attr('transform', `translate(0, 0)`);
+            //.attr('transform', `translate(0, 0)`);
+            .attr('transform', `translate(${-margin.left},, 0)`);
     }
 
     update() {
