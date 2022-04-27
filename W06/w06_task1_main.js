@@ -1,4 +1,4 @@
-d3.csv("https://takachiyo.github.io/InfoVis2022/W04/w04_task1.csv")
+d3.csv("https://takachiyo.github.io/InfoVis2022/W04/data.csv")
     .then( data => {
         data.forEach( d => { d.x = +d.x; d.y = +d.y; });
 
