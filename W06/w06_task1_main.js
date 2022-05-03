@@ -65,7 +65,7 @@ class ScatterPlot {
 
         self.yaxis_group = self.chart.append('g')
             //.attr('transform', `translate(0, 0)`);
-            .attr('transform', `translate(-30, -20)`);
+            .attr('transform', `translate(0, -20)`);
     }
 
     update() {
