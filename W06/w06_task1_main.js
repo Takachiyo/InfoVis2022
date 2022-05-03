@@ -23,7 +23,7 @@ class ScatterPlot {
             parent: config.parent,
             width: config.width || 256,
             height: config.height || 256,
-            margin: config.margin || {top:10, right:10, bottom:10, left:10}
+            margin: config.margin || {top:30, right:30, bottom:50, left:60}
         }
         this.data = data;
         this.init();
@@ -37,8 +37,8 @@ class ScatterPlot {
             .attr('height', self.config.height);
 
         self.chart = self.svg.append('g')
-            //.attr('transform', `translate(${self.config.margin.left}, ${self.config.margin.top})`);
-            .attr('transform', `translate(30, 10)`);
+            .attr('transform', `translate(${self.config.margin.left}, ${self.config.margin.top})`);
+            //.attr('transform', `translate(30, 10)`);
 
         self.inner_width = self.config.width - self.config.margin.left - self.config.margin.right;
         self.inner_height = self.config.height - self.config.margin.top - self.config.margin.bottom;
