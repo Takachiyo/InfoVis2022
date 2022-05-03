@@ -43,7 +43,7 @@ class ScatterPlot {
         self.inner_width = self.config.width - self.config.margin.left - self.config.margin.right;
         self.inner_height = self.config.height - self.config.margin.top - self.config.margin.bottom;
         self.axis_inner_width = self.inner_width + self.config.margin.left;
-        self.axis_inner_height = self.inner_height + self.config.margin.bottom;
+        self.axis_inner_height = self.inner_height + 30;
 
         self.xscale = d3.scaleLinear()
             //.range( [0, self.inner_width] );
@@ -61,7 +61,7 @@ class ScatterPlot {
 
         self.xaxis_group = self.chart.append('g')
             //.attr('transform', `translate(0, ${self.inner_height})`);
-            .attr('transform', `translate(-30, ${self.inner_height }+50)`);
+            .attr('transform', `translate(-30, ${self.axis_inner_height })`);
 
         self.yaxis_group = self.chart.append('g')
             //.attr('transform', `translate(0, 0)`);
