@@ -46,12 +46,12 @@ class ScatterPlot {
         self.axis_inner_height = self.inner_height + self.config.margin.bottom;
 
         self.xscale = d3.scaleLinear()
-            .range( [0, self.inner_width] );
-            //.range( [-self.config.margin.left, self.inner_width] );
+            //.range( [0, self.inner_width] );
+            .range( [-20, self.inner_width+30] );
 
         self.yscale = d3.scaleLinear()
-            .range( [0, self.inner_height] );
-            //.range( [0, self.axis_inner_height] );
+            //.range( [0, self.inner_height] );
+            .range( [-20, self.inner_height+30] );
 
         self.xaxis = d3.axisBottom( self.xscale )
             .ticks(6);
