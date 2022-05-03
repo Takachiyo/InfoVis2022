@@ -60,12 +60,12 @@ class ScatterPlot {
             .ticks(6);
 
         self.xaxis_group = self.chart.append('g')
-            .attr('transform', `translate(0, ${self.inner_height})`);
-            //.attr('transform', `translate(${-self.config.margin.left}, ${self.axis_inner_height })`);
+            //.attr('transform', `translate(0, ${self.inner_height})`);
+            .attr('transform', `translate(-30, ${self.inner_height }+50)`);
 
         self.yaxis_group = self.chart.append('g')
-            .attr('transform', `translate(0, 0)`);
-            //.attr('transform', `translate(${-self.config.margin.left},, 0)`);
+            //.attr('transform', `translate(0, 0)`);
+            .attr('transform', `translate(-30, -20)`);
     }
 
     update() {
