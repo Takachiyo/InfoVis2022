@@ -65,6 +65,9 @@ class ScatterPlot {
             //.attr('transform', `translate(0, ${self.inner_height})`);
             .attr('transform', `translate(0, ${self.axis_inner_height })`)
             .append("text")
+            .attr("class","barName")
+			.attr("x", 10)
+			.attr("y", 10)
             .text("X Label");
 
         self.yaxis_group = self.chart.append('g')
