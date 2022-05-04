@@ -109,7 +109,7 @@ class ScatterPlot {
             .call( self.yaxis )
             .append("text")
             .attr("fill", "black")
-			.attr("x", 0)
+			.attr("x", -30)
 			.attr("y", 30)
             .attr("transform", "rotate(-90)")
             .text("Y Label");
