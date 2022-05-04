@@ -7,7 +7,6 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W04/data.csv")
             width: 256,
             height: 256,
             margin: {top:50, right:30, bottom:40, left:80}
-            //margin: {top:10, right:10, bottom:20, left:30}
         };
 
         const scatter_plot = new ScatterPlot( config, data );
@@ -24,7 +23,6 @@ class ScatterPlot {
             parent: config.parent,
             width: config.width || 256,
             height: config.height || 256,
-            //margin: config.margin || {top:50, right:30, bottom:40, left:80}
             margin: config.margin || {top:10, right:10, bottom:10, left:10}
         }
         this.data = data;
@@ -40,19 +38,14 @@ class ScatterPlot {
 
         self.chart = self.svg.append('g')
             .attr('transform', `translate(${self.config.margin.left}, ${self.config.margin.top})`);
-            //.attr('transform', `translate(30, 10)`);
 
         self.inner_width = self.config.width - self.config.margin.left - self.config.margin.right;
         self.inner_height = self.config.height - self.config.margin.top - self.config.margin.bottom;
-        //self.axis_inner_width = self.inner_width + 30;
-        //self.axis_inner_height = self.inner_height + 30;
 
         self.xscale = d3.scaleLinear()
-            //.range( [0, self.inner_width] );
             .range( [-30, self.inner_width] );
 
         self.yscale = d3.scaleLinear()
-            //.range( [0, self.inner_height] );
             .range( [0, self.inner_height] );
 
         self.xaxis = d3.axisBottom( self.xscale )
@@ -66,11 +59,9 @@ class ScatterPlot {
             .tickPadding(5);
 
         self.xaxis_group = self.chart.append('g')
-            //.attr('transform', `translate(0, ${self.inner_height})`);
             .attr('transform', `translate(0, ${self.inner_height })`);
 
         self.yaxis_group = self.chart.append('g')
-            //.attr('transform', `translate(0, 0)`);
             .attr('transform', `translate(-30, 0)`);
     }
 
@@ -79,12 +70,10 @@ class ScatterPlot {
 
         const xmin = d3.min( self.data, d => d.x );
         const xmax = d3.max( self.data, d => d.x );
-        //self.xscale.domain( [xmin, xmax] );
         self.xscale.domain( [0, xmax] );
 
         const ymin = d3.min( self.data, d => d.y );
         const ymax = d3.max( self.data, d => d.y );
-        //self.yscale.domain( [ymax, ymin] );
         self.yscale.domain( [ymax, 0] );
 
         self.render();
