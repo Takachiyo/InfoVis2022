@@ -99,10 +99,10 @@ class ScatterPlot {
             .append("text")
             .attr("fill", "black")
 			.attr("x", 100)
-			.attr("y", -10)
+			.attr("y", 0)
             .attr("font-size", "30pt")
             .attr("font-weight", "bold")
-            .text("X Label");
+            .text("Chart Title");
 
         self.xaxis_group
             .call( self.xaxis )
