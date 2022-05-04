@@ -24,7 +24,7 @@ class ScatterPlot {
             parent: config.parent,
             width: config.width || 256,
             height: config.height || 256,
-            margin: config.margin || {top:30, right:30, bottom:50, left:60}
+            margin: config.margin || {top:50, right:30, bottom:50, left:60}
             //margin: config.margin || {top:10, right:10, bottom:10, left:10}
         }
         this.data = data;
@@ -91,8 +91,8 @@ class ScatterPlot {
 
         self.svg.append("text")
             .attr("fill", "black")
-			.attr("x", 100)
-			.attr("y", 20)
+			.attr("x", 80)
+			.attr("y", 30)
             .attr("font-size", "20pt")
             .attr("font-weight", "bold")
             .text("Chart Title");
