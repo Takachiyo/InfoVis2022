@@ -57,7 +57,8 @@ class ScatterPlot {
 
         self.xaxis = d3.axisBottom( self.xscale )
             .ticks(7)
-            .tickPadding(10);
+            .tickSize(10,20)
+            .tickPadding(5);
 
         self.yaxis = d3.axisLeft( self.yscale )
             .ticks(7)
