@@ -113,7 +113,7 @@ class ScatterPlot {
             .append("text")
             .attr("fill", "black")
 			.attr("x", 50)
-			.attr("y", 30)
+			.attr("y", 40)
             .attr("font-size", "10pt")
             .attr("font-weight", "bold")
             .text("X Label");
