@@ -39,9 +39,9 @@ class ScatterPlot {
             .attr('height', self.config.height);
 
         self.chart = self.svg.append('g')
-            .attr('transform', `translate(${self.config.margin.left}, ${self.config.margin.top})`)
+            .attr('transform', `translate(${self.config.margin.left}, ${self.config.margin.top})`);
             //.attr('transform', `translate(30, 10)`);
-            .append("text")
+        self.svg.append("text")
             .attr("fill", "black")
 			.attr("x", 100)
 			.attr("y", 0)
