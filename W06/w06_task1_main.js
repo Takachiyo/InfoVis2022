@@ -98,9 +98,7 @@ class ScatterPlot {
             .attr("r", d => d.r );
 
         self.xaxis_group
-            .call( self.xaxis );
-
-        self.xaxis_text
+            .call( self.xaxis )
             .append("text")
             .attr("fill", "black")
 			.attr("x", 0)
