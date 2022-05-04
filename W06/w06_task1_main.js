@@ -63,13 +63,11 @@ class ScatterPlot {
 
         self.xaxis_group = self.chart.append('g')
             //.attr('transform', `translate(0, ${self.inner_height})`);
-            .attr('transform', `translate(0, ${self.axis_inner_height })`)
-            .text("X Label");
+            .attr('transform', `translate(0, ${self.axis_inner_height })`);
 
         self.yaxis_group = self.chart.append('g')
             //.attr('transform', `translate(0, 0)`);
-            .attr('transform', `translate(-30, 0)`)
-            .text("Y Label");
+            .attr('transform', `translate(-30, 0)`);
     }
 
     update() {
@@ -100,10 +98,12 @@ class ScatterPlot {
             .attr("r", d => d.r );
 
         self.xaxis_group
+            .text("X Label")
             .call( self.xaxis );
             
 
         self.yaxis_group
+            .text("Y Label")
             .call( self.yaxis );
     }
 }
