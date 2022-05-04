@@ -53,7 +53,7 @@ class ScatterPlot {
 
         self.yscale = d3.scaleLinear()
             //.range( [0, self.inner_height] );
-            .range( [0, self.axis_inner_height] );
+            .range( [0, self.inner_height] );
 
         self.xaxis = d3.axisBottom( self.xscale )
             .ticks(7);
