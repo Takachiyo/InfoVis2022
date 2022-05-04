@@ -6,7 +6,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W04/data.csv")
             parent: '#drawing_region',
             width: 256,
             height: 256,
-            margin: {top:50, right:30, bottom:30, left:80}
+            margin: {top:50, right:30, bottom:20, left:80}
             //margin: {top:10, right:10, bottom:20, left:30}
         };
 
@@ -24,7 +24,7 @@ class ScatterPlot {
             parent: config.parent,
             width: config.width || 256,
             height: config.height || 256,
-            margin: config.margin || {top:50, right:30, bottom:30, left:80}
+            margin: config.margin || {top:50, right:30, bottom:20, left:80}
             //margin: config.margin || {top:10, right:10, bottom:10, left:10}
         }
         this.data = data;
@@ -44,8 +44,8 @@ class ScatterPlot {
 
         self.inner_width = self.config.width - self.config.margin.left - self.config.margin.right;
         self.inner_height = self.config.height - self.config.margin.top - self.config.margin.bottom;
-        self.axis_inner_width = self.inner_width + 30;
-        self.axis_inner_height = self.inner_height + 30;
+        //self.axis_inner_width = self.inner_width + 30;
+        //self.axis_inner_height = self.inner_height + 30;
 
         self.xscale = d3.scaleLinear()
             //.range( [0, self.inner_width] );
@@ -63,7 +63,7 @@ class ScatterPlot {
 
         self.xaxis_group = self.chart.append('g')
             //.attr('transform', `translate(0, ${self.inner_height})`);
-            .attr('transform', `translate(0, ${self.axis_inner_height })`);
+            .attr('transform', `translate(0, ${self.inner_height })`);
 
         self.yaxis_group = self.chart.append('g')
             //.attr('transform', `translate(0, 0)`);
