@@ -103,14 +103,14 @@ class ScatterPlot {
             .attr("fill", "black")
 			.attr("x", 30)
 			.attr("y", 30)
-            //.attr("text-anchor", "middle")
-            //.attr("font-size", "10pt")
-            //.attr("font-weight", "bold")
             .text("X Label");
 
         self.yaxis_group
             .call( self.yaxis )
             .append("text")
+            .attr("fill", "black")
+			.attr("x", -30)
+			.attr("y", 30)
             .text("Y Label");
     }
 }
