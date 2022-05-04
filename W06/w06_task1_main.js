@@ -82,14 +82,6 @@ class ScatterPlot {
     render() {
         let self = this;
 
-        self.svg.append("text")
-            .attr("fill", "black")
-			.attr("x", 80)
-			.attr("y", 25)
-            .attr("font-size", "20pt")
-            .attr("font-weight", "bold")
-            .text("Chart Title");
-
         self.chart.selectAll("circle")
             .data(self.data)
             .enter()
@@ -101,23 +93,8 @@ class ScatterPlot {
 
         self.xaxis_group
             .call( self.xaxis )
-            .append("text")
-            .attr("fill", "black")
-			.attr("x", 50)
-			.attr("y", 40)
-            .attr("font-size", "10pt")
-            .attr("font-weight", "bold")
-            .text("X Label");
 
         self.yaxis_group
             .call( self.yaxis )
-            .append("text")
-            .attr("fill", "black")
-			.attr("x", -50)
-			.attr("y", -30)
-            .attr("transform", "rotate(-90)")
-            .attr("font-size", "10pt")
-            .attr("font-weight", "bold")
-            .text("Y Label");
     }
 }
