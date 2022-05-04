@@ -111,7 +111,7 @@ class ScatterPlot {
             .call( self.yaxis )
             .append("text")
             .attr("fill", "black")
-			.attr("x", -30)
+			.attr("x", -50)
 			.attr("y", 30)
             .attr("transform", "rotate(-90)")
             .attr("font-size", "10pt")
