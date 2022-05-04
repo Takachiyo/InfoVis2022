@@ -95,7 +95,14 @@ class ScatterPlot {
             .append("circle")
             .attr("cx", d => self.xscale( d.x ) )
             .attr("cy", d => self.yscale( d.y ) )
-            .attr("r", d => d.r );
+            .attr("r", d => d.r )
+            .append("text")
+            .attr("fill", "black")
+			.attr("x", 100)
+			.attr("y", -10)
+            .attr("font-size", "30pt")
+            .attr("font-weight", "bold")
+            .text("X Label");
 
         self.xaxis_group
             .call( self.xaxis )
