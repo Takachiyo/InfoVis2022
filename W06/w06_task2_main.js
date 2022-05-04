@@ -107,7 +107,7 @@ class ScatterPlot {
 			.attr("y", 40)
             .attr("font-size", "10pt")
             .attr("font-weight", "bold")
-            .text("X Label");
+            .text("X-Label");
 
         self.yaxis_group
             .call( self.yaxis )
@@ -118,6 +118,6 @@ class ScatterPlot {
             .attr("transform", "rotate(-90)")
             .attr("font-size", "10pt")
             .attr("font-weight", "bold")
-            .text("Y Label");
+            .text("Y-Label");
     }
 }
