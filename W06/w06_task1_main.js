@@ -57,12 +57,12 @@ class ScatterPlot {
 
         self.xaxis = d3.axisBottom( self.xscale )
             .ticks(7)
-            .tickSize(10,10)
+            .tickSize(5,5)
             .tickPadding(5);
 
         self.yaxis = d3.axisLeft( self.yscale )
             .ticks(7)
-            .tickSize(10,10)
+            .tickSize(5,5)
             .tickPadding(5);
 
         self.xaxis_group = self.chart.append('g')
