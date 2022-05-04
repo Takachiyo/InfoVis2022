@@ -98,13 +98,14 @@ class ScatterPlot {
             .attr("r", d => d.r );
 
         self.xaxis_group
-            .call( self.xaxis )
+            .call( self.xaxis );
+
+        self.xaxis_text
             .append("text")
             .attr("fill", "black")
 			.attr("x", 0)
-			.attr("y", self.axis_inner_height)
+			.attr("y", self.axis_inner_height+10)
             .text("X Label");
-            
             
 
         self.yaxis_group
