@@ -56,10 +56,10 @@ class ScatterPlot {
             .range( [0, self.axis_inner_height] );
 
         self.xaxis = d3.axisBottom( self.xscale )
-            .ticks(5);
+            .ticks(7);
 
         self.yaxis = d3.axisLeft( self.yscale )
-            .ticks(5);
+            .ticks(7);
 
         self.xaxis_group = self.chart.append('g')
             //.attr('transform', `translate(0, ${self.inner_height})`);
@@ -92,7 +92,7 @@ class ScatterPlot {
         self.svg.append("text")
             .attr("fill", "black")
 			.attr("x", 80)
-			.attr("y", 30)
+			.attr("y", 25)
             .attr("font-size", "20pt")
             .attr("font-weight", "bold")
             .text("Chart Title");
