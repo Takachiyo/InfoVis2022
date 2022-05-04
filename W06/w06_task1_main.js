@@ -111,6 +111,7 @@ class ScatterPlot {
             .attr("fill", "black")
 			.attr("x", -30)
 			.attr("y", 30)
+            .attr("transform", "rotate(-90)")
             .text("Y Label");
     }
 }
