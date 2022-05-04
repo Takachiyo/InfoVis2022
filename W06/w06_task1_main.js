@@ -6,7 +6,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W04/data.csv")
             parent: '#drawing_region',
             width: 256,
             height: 256,
-            margin: {top:30, right:30, bottom:50, left:60}
+            //margin: {top:30, right:30, bottom:50, left:60}
+            margin: {top:10, right:10, bottom:20, left:10}
         };
 
         const scatter_plot = new ScatterPlot( config, data );
@@ -23,6 +24,7 @@ class ScatterPlot {
             parent: config.parent,
             width: config.width || 256,
             height: config.height || 256,
+            //margin: config.margin || {top:10, right:10, bottom:10, left:10}
             margin: config.margin || {top:10, right:10, bottom:10, left:10}
         }
         this.data = data;
@@ -46,12 +48,12 @@ class ScatterPlot {
         self.axis_inner_height = self.inner_height + 30;
 
         self.xscale = d3.scaleLinear()
-            //.range( [0, self.inner_width] );
-            .range( [-20, self.inner_width+30] );
+            .range( [0, self.inner_width] );
+            //.range( [-20, self.inner_width+30] );
 
         self.yscale = d3.scaleLinear()
-            //.range( [0, self.inner_height] );
-            .range( [-20, self.inner_height+30] );
+            .range( [0, self.inner_height] );
+            //.range( [-20, self.inner_height+30] );
 
         self.xaxis = d3.axisBottom( self.xscale )
             .ticks(6);
@@ -60,12 +62,12 @@ class ScatterPlot {
             .ticks(6);
 
         self.xaxis_group = self.chart.append('g')
-            //.attr('transform', `translate(0, ${self.inner_height})`);
-            .attr('transform', `translate(0, ${self.axis_inner_height })`);
+            .attr('transform', `translate(0, ${self.inner_height})`);
+            //.attr('transform', `translate(0, ${self.axis_inner_height })`);
 
         self.yaxis_group = self.chart.append('g')
-            //.attr('transform', `translate(0, 0)`);
-            .attr('transform', `translate(-30, -20)`);
+            .attr('transform', `translate(0, 0)`);
+            //.attr('transform', `translate(-30, -20)`);
     }
 
     update() {
