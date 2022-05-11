@@ -44,7 +44,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W04/csv_pop_estimate_2045.csv",f
     
             self.yscale = d3.scaleLinear()
             .range([0, self.inner_height])
-            .paddingInner(0.1);
+            //.paddingInner(0.1);
     
             self.xaxis = d3.axisBottom( self.xscale )
             .ticks(5)
