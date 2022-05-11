@@ -1,7 +1,4 @@
-d3.csv("https://takachiyo.github.io/InfoVis2022/W04/csv_pop_estimate_2045.csv")
-    .then( data => {
-        data.forEach( d => { d.label = +d.label; d.value = +d.value; });
-
+d3.csv("https://takachiyo.github.io/InfoVis2022/W04/csv_pop_estimate_2045.csv",function(error, data){
         var config = {
             parent: '#drawing_region',
             width: 1500,
