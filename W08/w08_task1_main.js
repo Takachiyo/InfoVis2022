@@ -16,7 +16,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W04/csv_pop_estimate_2045.csv")
         console.log( error );
     });
     
-    class ScatterPlot {
+    class BarChart {
 
         constructor( config, data ) {
             this.config = {
