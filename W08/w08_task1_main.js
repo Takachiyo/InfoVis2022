@@ -6,28 +6,23 @@
     {label:'Egg', value:80}
 ];*/
 
-d3.csv("https://takachiyo.github.io/InfoVis2022/W04/csv_pop_estimate_2045.csv", function(error, data) {
-    var text = "";
-    for(var i=0; i<data.length; i++){
-        text += data[i].label + " = " + data[i].value + "<br>";
-    }
-});
-
 //var width = 256;
 var width = 1500;
 //var height = 128;
 var height = 1500;
 var margin = {top:10, right:10, bottom:20, left:60};
+const inner_width = width - margin.left - margin.right;
+const inner_height = height - margin.top - margin.bottom;
 
-var svg = d3.select('#drawing_region')
+d3.csv("https://takachiyo.github.io/InfoVis2022/W04/csv_pop_estimate_2045.csv", function(error, data) {
+    svg.select('#drawing_region')
     .attr('width', width)
     .attr('height', height);
 
 var chart = svg.append('g')
     .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-const inner_width = width - margin.left - margin.right;
-const inner_height = height - margin.top - margin.bottom;
+
 
 // Initialize axis scales
 const xscale = d3.scaleLinear()
@@ -64,3 +59,5 @@ chart.selectAll("rect").data(data).enter()
     //.attr("width", d => xscale(d.人口2015年))
     .attr("width", d => xscale(d.value))
     .attr("height", yscale.bandwidth());
+
+});
