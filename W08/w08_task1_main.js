@@ -52,7 +52,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W04/csv_pop_estimate_2045.csv")
             .range([0, self.inner_width]);
     
             self.yscale = d3.scaleBand()
-            .range([0, self.inner_height])
+            .range([-10, self.inner_height])
             .paddingInner(0.1);
     
             self.xaxis = d3.axisBottom( self.xscale )
@@ -63,7 +63,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W04/csv_pop_estimate_2045.csv")
             .tickSizeOuter(0);
     
             self.xaxis_group = self.chart.append('g')
-                .attr('transform', `translate(0, -30)`);
+                .attr('transform', `translate(0, -20)`);
     
             self.yaxis_group = self.chart.append('g')
             //.attr('transform', `translate(0, 30)`);
@@ -104,8 +104,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W04/csv_pop_estimate_2045.csv")
             .call( self.xaxis )
             .append("text")
             .attr("fill", "black")
-			.attr("x", 70)
-			.attr("y", -40)
+			.attr("x", 150)
+			.attr("y", 0)
             .attr("font-size", "10pt")
             .attr("font-weight", "bold")
             .text("X-Label");
@@ -114,8 +114,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W04/csv_pop_estimate_2045.csv")
             .call( self.yaxis )
             .append("text")
             .attr("fill", "black")
-			.attr("x", -50)
-			.attr("y", 30)
+			.attr("x", -70)
+			.attr("y", 70)
             .attr("transform", "rotate(-90)")
             .attr("font-size", "10pt")
             .attr("font-weight", "bold")
