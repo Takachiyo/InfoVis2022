@@ -12,7 +12,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W04/csv_pop_estimate_2045.csv")
             parent: '#drawing_region',
             width: 1500,
             height: 1500,
-            margin: {top:50, right:10, bottom:20, left:60}
+            margin: {top:80, right:10, bottom:20, left:60}
         };
 
         const barchart_plot = new BarChart( config, data );
@@ -49,11 +49,9 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W04/csv_pop_estimate_2045.csv")
             self.inner_height = self.config.height - self.config.margin.top - self.config.margin.bottom;
     
             self.xscale = d3.scaleLinear()
-            //.domain([0, d3.max(self.data, d => d.value)])
             .range([0, self.inner_width]);
     
             self.yscale = d3.scaleBand()
-            //.domain(self.data.map(d => d.label))
             .range([0, self.inner_height])
             .paddingInner(0.1);
     
