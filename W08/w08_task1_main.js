@@ -63,10 +63,10 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W04/csv_pop_estimate_2045.csv")
             .tickSizeOuter(0);
     
             self.xaxis_group = self.chart.append('g')
-                //.attr('transform', `translate(0, ${self.inner_height })`);
+                .attr('transform', `translate(0, -30)`);
     
             self.yaxis_group = self.chart.append('g')
-            .attr('transform', `translate(0, 30)`);
+            //.attr('transform', `translate(0, 30)`);
         }
     
         update() {
