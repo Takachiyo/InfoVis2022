@@ -39,11 +39,11 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             self.chart = self.svg.append('g')
                 .attr('transform', `translate(${self.config.margin.left}, ${self.config.margin.top})`);
 
-                /*
+            
             self.line = d3.line()
-            .x(function(d){ return d[0]; })
-            .y(function(d){ return d[1]; })
-            */
+            .x( d => d.x )
+            .y( d => d.y );
+            
     
             self.inner_width = self.config.width - self.config.margin.left - self.config.margin.right;
             self.inner_height = self.config.height - self.config.margin.top - self.config.margin.bottom;
@@ -90,14 +90,6 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .attr("font-weight", "bold")
             .text("W08-Example2");
 
-            self.svg.append('path')
-            .datum(self.data)
-            .attr('stroke', 'black')
-            .attr('fill', 'none')
-            .attr('d', d3.line()
-            .x(function(d) { return self.xscale(d.x); })
-            .y(function(d) { return self.yscale(d.y); }));
-
             self.xaxis_group
             .call( self.xaxis )
             .append("text")
@@ -118,6 +110,12 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .attr("font-size", "10pt")
             .attr("font-weight", "bold")
             .text("y");
+
+            self.svg.chart.append('path')
+            .datum(self.data)
+            .attr('stroke', 'black')
+            .attr('fill', 'none')
+            .attr('d', line(self.data));
 
         }
     }
