@@ -6,7 +6,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data.csv")
             parent: '#drawing_region',
             width: 1000,
             height: 500,
-            margin: {top:60, right:10, bottom:20, left:80}
+            margin: {top:60, right:10, bottom:50, left:80}
         };
 
         const barchart_plot = new BarChart( config, data );
@@ -108,7 +108,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data.csv")
             .call( self.yaxis )
             .append("text")
             .attr("fill", "black")
-			.attr("x", 70)
+			.attr("x", -70)
 			.attr("y", -30)
             .attr("transform", "rotate(-90)")
             .attr("font-size", "10pt")
