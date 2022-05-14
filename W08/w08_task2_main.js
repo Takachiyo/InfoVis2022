@@ -37,8 +37,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
                 .attr('height', self.config.height);
 
             self.line = d3.line()
-            .x(self.data, d => d.x )
-            .y(self.data, d => d.y );
+            .x(self.data.map(d => d.x) )
+            .y(self.data.map( d => d.y) );
     
             self.chart = self.svg.append('g')
                 .attr('transform', `translate(${self.config.margin.left}, ${self.config.margin.top})`);
