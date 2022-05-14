@@ -1,9 +1,3 @@
-/*
-d3.csv("https://takachiyo.github.io/InfoVis2022/W04/csv_pop_estimate_2045.csv", function(data){
-    console.log(data)
-});
-*/
-
 d3.csv("https://takachiyo.github.io/InfoVis2022/W04/csv_pop_estimate_2045.csv")
     .then( data => {
         data.forEach( d => { d.value = +d.value; });
@@ -57,6 +51,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W04/csv_pop_estimate_2045.csv")
     
             self.xaxis = d3.axisBottom( self.xscale )
             .ticks(5)
+            .tickSize(10,0)
             .tickSizeOuter(0);
     
             self.yaxis = d3.axisLeft( self.yscale )
@@ -105,7 +100,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W04/csv_pop_estimate_2045.csv")
             .append("text")
             .attr("fill", "black")
 			.attr("x", 150)
-			.attr("y", 0)
+			.attr("y", -10)
             .attr("font-size", "10pt")
             .attr("font-weight", "bold")
             .text("X-Label");
