@@ -90,7 +90,9 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .text("W08-Example2");
 
             self.svg.append('path')
-            .attr('d', self.line(self.data))
+            .attr('d', d3.line()
+            .x(function(d){ return self.xscale( d.x ); })
+            .y(function(d){ return self.yscale( d.y ) ; }))
             .attr('stroke', 'black')
             .attr('fill', 'none');
 
