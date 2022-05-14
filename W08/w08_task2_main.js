@@ -95,8 +95,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .attr('stroke', 'black')
             .attr('fill', 'none')
             .attr('d', d3.line()
-            .x(function(d) { return self.xscale(d[0]); })
-            .y(function(d) { return self.yscale(d[1]); }));
+            .x(function(d) { return self.xscale(d.x); })
+            .y(function(d) { return self.yscale(d.y); }));
 
             self.xaxis_group
             .call( self.xaxis )
