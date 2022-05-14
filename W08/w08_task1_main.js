@@ -21,9 +21,9 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
         constructor( config, data ) {
             this.config = {
                 parent: config.parent,
-                width: config.width || 256,
-                height: config.height || 128,
-                margin: config.margin || {top:50, right:10, bottom:20, left:60}
+                width: config.width || 1000,
+                height: config.height || 500,
+                margin: config.margin || {top:60, right:10, bottom:50, left:80}
             }
             this.data = data;
             this.init();

@@ -4,8 +4,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
 
         var config = {
             parent: '#drawing_region',
-            width: 256,
-            height: 128,
+            width: 500,
+            height: 250,
             margin: {top:60, right:10, bottom:50, left:80}
         };
 
@@ -21,8 +21,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
         constructor( config, data ) {
             this.config = {
                 parent: config.parent,
-                width: config.width || 256,
-                height: config.height || 128,
+                width: config.width || 500,
+                height: config.height || 250,
                 margin: config.margin || {top:50, right:10, bottom:20, left:60}
             }
             this.data = data;
@@ -94,7 +94,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .enter()
             .append('path')
             .attr("x", 0)
-            .attr("y", d => self.yscale(d.label))
+            .attr("y", d => self.yscale(d.y))
             .attr('d', self.line(self.data))
             .attr('stroke', 'black')
             .attr('fill', 'none');
