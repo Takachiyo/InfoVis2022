@@ -22,11 +22,11 @@ const inner_height = height - margin.top - margin.bottom;
 
 // Initialize axis scales
 const xscale = d3.scaleLinear()
-      .domain([0, d3.max(data, d => d.value)])
+      .domain([0, d3.max(data, d => d.x)])
       .range([0, inner_width]);
 
 const yscale = d3.scaleLinear()
-      .domain(data.map(d => d.label))
+      .domain(data.map(d => d.y))
       .range([0, inner_height])
 
 // Initialize axes
