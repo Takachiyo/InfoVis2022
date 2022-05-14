@@ -41,8 +41,10 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
 
             
             self.line = d3.line()
-            .x( d => d.x )
-            .y( d => d.y );
+            .x(d => d.x )
+            .y(d => d.y );
+            //.x(self.data, d => d.x )
+            //.y(self.data, d => d.y );
             
     
             self.inner_width = self.config.width - self.config.margin.left - self.config.margin.right;
@@ -115,7 +117,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .datum(self.data)
             .attr('stroke', 'black')
             .attr('fill', 'none')
-            .attr('d', line(self.data));
+            .attr('d', self.line(self.data));
 
         }
     }
