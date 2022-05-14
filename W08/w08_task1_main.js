@@ -99,10 +99,10 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data.csv")
             .append("text")
             .attr("fill", "black")
 			.attr("x", 410)
-			.attr("y", 30)
+			.attr("y", 40)
             .attr("font-size", "10pt")
             .attr("font-weight", "bold")
-            .text("X-Label");
+            .text("人口数");
             
             self.yaxis_group
             .call( self.yaxis )
@@ -113,7 +113,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data.csv")
             .attr("transform", "rotate(-90)")
             .attr("font-size", "10pt")
             .attr("font-weight", "bold")
-            .text("Y-Label");
+            .text("府県名");
 
         }
     }
