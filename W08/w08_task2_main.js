@@ -49,9 +49,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             self.xscale = d3.scaleLinear()
             .range([0, self.inner_width]);
     
-            self.yscale = d3.scaleBand()
-            .range([0, self.inner_height])
-            .paddingInner(0.1);
+            self.yscale = d3.scaleLinear()
+            .range([0, self.inner_height]);
     
             self.xaxis = d3.axisBottom( self.xscale )
             .ticks(5)
