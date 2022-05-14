@@ -37,14 +37,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
                 .attr('height', self.config.height);
     
             self.chart = self.svg.append('g')
-                .attr('transform', `translate(${self.config.margin.left}, ${self.config.margin.top})`);
-
-            
-            self.line = d3.line()
-            //.x(d => d.x )
-            //.y(d => d.y );
-            .x(self.data, d => d.x )
-            .y(self.data, d => d.y );
+                .attr('transform', `translate(${self.config.margin.left}, ${self.config.margin.top})`)
     
             self.inner_width = self.config.width - self.config.margin.left - self.config.margin.right;
             self.inner_height = self.config.height - self.config.margin.top - self.config.margin.bottom;
@@ -67,6 +60,15 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
     
             self.yaxis_group = self.chart.append('g')
             //.attr('transform', `translate(0, 30)`);
+            
+            self.line = d3.line()
+            //.x(d => d.x )
+            //.y(d => d.y );
+            //.x(self.data, d => d.x )
+            //.y(self.data, d => d.y );
+            .x(self.xscale)
+            .y(self.yscale);
+
         }
     
         update() {
@@ -112,7 +114,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .attr("font-weight", "bold")
             .text("y");
 
-            self.svg.append('path')
+            self.svg.chart.append('path')
             //.datum(self.data)
             .attr('stroke', 'black')
             .attr('fill', 'none')
