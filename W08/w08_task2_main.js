@@ -89,7 +89,10 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .attr("font-weight", "bold")
             .text("W08-Example2");
 
-            self.chart.append('path')
+            self.chart.selectAll("rect")
+            .data(self.data)
+            .enter()
+            .append('path')
             .attr('d', self.line(self.data))
             .attr('stroke', 'black')
             .attr('fill', 'none');
