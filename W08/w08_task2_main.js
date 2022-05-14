@@ -40,8 +40,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
                 .attr('transform', `translate(${self.config.margin.left}, ${self.config.margin.top})`);
 
             self.line = d3.line()
-            .x(d => d.x )
-            .y( d => d.y);
+            .x(function(d){ return d[0]; })
+            .y(function(d){ return d[1]; })
     
             self.inner_width = self.config.width - self.config.margin.left - self.config.margin.right;
             self.inner_height = self.config.height - self.config.margin.top - self.config.margin.bottom;
