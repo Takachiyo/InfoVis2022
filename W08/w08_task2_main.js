@@ -113,7 +113,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .text("y");
 
             self.svg.chart.append('path')
-            .datum(self.data)
+            //.datum(self.data)
             .attr('stroke', 'black')
             .attr('fill', 'none')
             .attr('d', self.line);
