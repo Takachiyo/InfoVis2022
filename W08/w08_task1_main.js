@@ -51,7 +51,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W04/csv_pop_estimate_2045.csv")
     
             self.xaxis = d3.axisBottom( self.xscale )
             .ticks(5)
-            .tickSize(10,0)
+            .tickSize(50,0)
             .tickSizeOuter(0);
     
             self.yaxis = d3.axisLeft( self.yscale )
