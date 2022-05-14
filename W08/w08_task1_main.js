@@ -46,12 +46,11 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data.csv")
             .range([0, self.inner_width]);
     
             self.yscale = d3.scaleBand()
-            .range([-10, self.inner_height])
+            .range([0, self.inner_height])
             .paddingInner(0.1);
     
             self.xaxis = d3.axisBottom( self.xscale )
             .ticks(5)
-            .tickSize(0,50)
             .tickSizeOuter(0);
     
             self.yaxis = d3.axisLeft( self.yscale )
@@ -100,7 +99,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data.csv")
             .append("text")
             .attr("fill", "black")
 			.attr("x", 150)
-			.attr("y", -10)
+			.attr("y", 10)
             .attr("font-size", "10pt")
             .attr("font-weight", "bold")
             .text("X-Label");
