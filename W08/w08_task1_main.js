@@ -34,7 +34,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
     
             self.svg = d3.select( self.config.parent )
                 .attr('width', self.config.width)
-                .attr('height', self.config.height);
+                .attr('height', self.config.height)
+                .attr('transform', `translate(${self.config.margin.left}, ${self.config.margin.top})`);
     
             self.chart = self.svg.append('g')
                 .attr('transform', `translate(${self.config.margin.left}, ${self.config.margin.top})`);
