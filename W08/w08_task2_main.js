@@ -96,6 +96,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .attr("x", 0)
             .attr("y", d => self.yscale(d.y))
             .attr('d', self.line(self.data))
+            .attr("width", d => self.xscale(d.x))
+            .attr("height", self.yscale.bandwidth())
             .attr('stroke', 'black')
             .attr('fill', 'none');
 
