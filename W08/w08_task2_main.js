@@ -4,8 +4,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
 
         var config = {
             parent: '#drawing_region',
-            width: 1000,
-            height: 500,
+            width: 256,
+            height: 128,
             margin: {top:60, right:10, bottom:50, left:80}
         };
 
@@ -35,13 +35,13 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             self.svg = d3.select( self.config.parent )
                 .attr('width', self.config.width)
                 .attr('height', self.config.height);
+    
+            self.chart = self.svg.append('g')
+                .attr('transform', `translate(${self.config.margin.left}, ${self.config.margin.top})`);
 
             self.line = d3.line()
             .x(d => d.x )
             .y( d => d.y);
-    
-            self.chart = self.svg.append('g')
-                .attr('transform', `translate(${self.config.margin.left}, ${self.config.margin.top})`);
     
             self.inner_width = self.config.width - self.config.margin.left - self.config.margin.right;
             self.inner_height = self.config.height - self.config.margin.top - self.config.margin.bottom;
@@ -93,6 +93,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .data(self.data)
             .enter()
             .append('path')
+            .attr("x", 0)
+            .attr("y", d => self.yscale(d.label))
             .attr('d', self.line(self.data))
             .attr('stroke', 'black')
             .attr('fill', 'none');
