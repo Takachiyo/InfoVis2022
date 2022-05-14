@@ -91,8 +91,6 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
 
             self.svg.append('path')
             .attr('d', self.line(self.data))
-            .attr("x", 0)
-            .attr("y", d => self.yscale(d.label))
             .attr('stroke', 'black')
             .attr('fill', 'none');
 
