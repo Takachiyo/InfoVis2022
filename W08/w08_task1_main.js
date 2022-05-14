@@ -4,8 +4,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data.csv")
 
         var config = {
             parent: '#drawing_region',
-            width: 1500,
-            height: 1500,
+            width: 256,
+            height: 128,
             margin: {top:80, right:10, bottom:20, left:80}
         };
 
@@ -21,8 +21,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data.csv")
         constructor( config, data ) {
             this.config = {
                 parent: config.parent,
-                width: config.width || 1500,
-                height: config.height || 1500,
+                width: config.width || 256,
+                height: config.height || 128,
                 margin: config.margin || {top:50, right:10, bottom:20, left:60}
             }
             this.data = data;
@@ -58,7 +58,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data.csv")
             .tickSizeOuter(0);
     
             self.xaxis_group = self.chart.append('g')
-                .attr('transform', `translate(0, -20)`);
+                .attr('transform', `translate(0, ${self.inner_height})`);
     
             self.yaxis_group = self.chart.append('g')
             //.attr('transform', `translate(0, 30)`);
