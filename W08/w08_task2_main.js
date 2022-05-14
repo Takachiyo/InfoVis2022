@@ -61,13 +61,13 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             self.yaxis_group = self.chart.append('g')
             //.attr('transform', `translate(0, 30)`);
             
-            self.line = d3.line()
+            //self.line = d3.line()
             //.x(d => d.x )
             //.y(d => d.y );
             //.x(self.data, d => d.x )
             //.y(self.data, d => d.y );
-            .x(self.xscale)
-            .y(self.yscale);
+            //.x(self.xscale)
+            //.y(self.yscale);
 
         }
     
@@ -118,7 +118,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             //.datum(self.data)
             .attr('stroke', 'black')
             .attr('fill', 'none')
-            .attr('d', self.line);
+            .attr('d', d3.line.x(self.xscale)
+            .y(self.yscale));
 
         }
     }
