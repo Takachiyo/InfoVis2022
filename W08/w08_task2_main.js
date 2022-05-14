@@ -9,14 +9,14 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
             margin: {top:60, right:10, bottom:50, left:80}
         };
 
-        const barchart_plot = new BarChart( config, data );
+        const barchart_plot = new DrawingLine( config, data );
         barchart_plot.update();
     })
     .catch( error => {
             console.log( error );
     });
 
-    class BarChart {
+    class DrawingLine {
 
         constructor( config, data ) {
             this.config = {
@@ -35,6 +35,10 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
             self.svg = d3.select( self.config.parent )
                 .attr('width', self.config.width)
                 .attr('height', self.config.height);
+
+            self.line = d3.line()
+            .x(self.data, d => d.x )
+            .y(self.data, d => d.y );
     
             self.chart = self.svg.append('g')
                 .attr('transform', `translate(${self.config.margin.left}, ${self.config.margin.top})`);
@@ -85,14 +89,10 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
             .attr("font-weight", "bold")
             .text("2015年度 近畿地方の人口");
 
-            self.chart.selectAll("rect")
-            .data(self.data)
-            .enter()
-            .append("rect")
-            .attr("x", 0)
-            .attr("y", d => self.yscale(d.label))
-            .attr("width", d => self.xscale(d.value))
-            .attr("height", self.yscale.bandwidth());
+            svg.append('path')
+            .attr('d', line(self.data))
+            .attr('stroke', 'black')
+            .attr('fill', 'none');
 
             self.xaxis_group
             .call( self.xaxis )
