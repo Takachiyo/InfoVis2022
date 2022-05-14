@@ -6,7 +6,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data.csv")
             parent: '#drawing_region',
             width: 1000,
             height: 500,
-            margin: {top:80, right:10, bottom:20, left:80}
+            margin: {top:60, right:10, bottom:20, left:80}
         };
 
         const barchart_plot = new BarChart( config, data );
@@ -66,7 +66,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data.csv")
         update() {
             let self = this;
 
-            self.xscale.domain([0, d3.max(self.data, d => d.value)+20])
+            self.xscale.domain([0, d3.max(self.data, d => d.value)])
 
             self.yscale.domain(self.data.map(d => d.label))
     
