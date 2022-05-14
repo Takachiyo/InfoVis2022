@@ -39,9 +39,11 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             self.chart = self.svg.append('g')
                 .attr('transform', `translate(${self.config.margin.left}, ${self.config.margin.top})`);
 
+                /*
             self.line = d3.line()
             .x(function(d){ return d[0]; })
             .y(function(d){ return d[1]; })
+            */
     
             self.inner_width = self.config.width - self.config.margin.left - self.config.margin.right;
             self.inner_height = self.config.height - self.config.margin.top - self.config.margin.bottom;
@@ -90,11 +92,11 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
 
             self.svg.append('path')
             .datum(self.data)
+            .attr('stroke', 'black')
+            .attr('fill', 'none')
             .attr('d', d3.line()
             .x(function(d) { return self.xscale(d[0]); })
-            .y(function(d) { return self.yscale(d[1]); }))
-            .attr('stroke', 'black')
-            .attr('fill', 'none');
+            .y(function(d) { return self.yscale(d[1]); }));
 
             self.xaxis_group
             .call( self.xaxis )
