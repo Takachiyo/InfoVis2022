@@ -14,6 +14,9 @@ var svg = d3.select('#drawing_region')
     .attr('width', width)
     .attr('height', height);
 
+var chart = svg.append('g')
+    .attr('transform', `translate(${margin.left}, ${margin.top})`);
+
 const inner_width = width - margin.left - margin.right;
 const inner_height = height - margin.top - margin.bottom;
 
