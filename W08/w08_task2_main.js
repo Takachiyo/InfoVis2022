@@ -112,7 +112,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .attr("font-weight", "bold")
             .text("y");
 
-            self.svg.chart.append('path')
+            self.svg.append('path')
             //.datum(self.data)
             .attr('stroke', 'black')
             .attr('fill', 'none')
