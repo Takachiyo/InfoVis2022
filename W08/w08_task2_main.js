@@ -87,7 +87,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
 			.attr("y", 25)
             .attr("font-size", "20pt")
             .attr("font-weight", "bold")
-            .text("2015年度 近畿地方の人口");
+            .text("W08-Example2");
 
             self.svg.append('path')
             .attr('d', line(self.data))
