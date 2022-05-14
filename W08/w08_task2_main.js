@@ -70,9 +70,9 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
         update() {
             let self = this;
 
-            self.xscale.domain([0, d3.max(self.data, d => d.value)])
+            self.xscale.domain([0, d3.max(self.data, d => d.x)])
 
-            self.yscale.domain(self.data.map(d => d.label))
+            self.yscale.domain(self.data.map(d => d.y))
     
             self.render();
         }
@@ -102,7 +102,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
 			.attr("y", 40)
             .attr("font-size", "10pt")
             .attr("font-weight", "bold")
-            .text("人口数");
+            .text("x");
             
             self.yaxis_group
             .call( self.yaxis )
@@ -113,7 +113,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .attr("transform", "rotate(-90)")
             .attr("font-size", "10pt")
             .attr("font-weight", "bold")
-            .text("府県名");
+            .text("y");
 
         }
     }
