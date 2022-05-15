@@ -57,6 +57,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
         }
     
         render() {
+            
+            let self = this;
 
             self.svg.append("text")
             .attr("fill", "black")
