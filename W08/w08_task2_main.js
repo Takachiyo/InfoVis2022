@@ -60,15 +60,6 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
                 .attr('transform', `translate(0, ${self.inner_height})`);
     
             self.yaxis_group = self.chart.append('g')
-            //.attr('transform', `translate(0, 30)`);
-
-            
-            //.x(d => d.x )
-            //.y(d => d.y );
-            //.x(self.data, d => d.x )
-            //.y(self.data, d => d.y );
-            //.x(self.xscale)
-            //.y(self.yscale);
 
         }
     
@@ -90,9 +81,14 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .x(function(d) { return self.xscale(d.x); })
             .y(function(d) { return self.yscale(d.y); })
 
+            self.area = d3.area()
+            .x(function(d) { return self.xscale(d.x); })
+            .y1(function(d) { return self.yscale(d.y); })
+            .y0( 0 );
+
             self.svg.append("text")
             .attr("fill", "black")
-			.attr("x", 150)
+			.attr("x", 140)
 			.attr("y", 25)
             .attr("font-size", "20pt")
             .attr("font-weight", "bold")
@@ -102,8 +98,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .call( self.xaxis )
             .append("text")
             .attr("fill", "black")
-			.attr("x", 150)
-			.attr("y", 40)
+			.attr("x", 160)
+			.attr("y", -100)
             .attr("font-size", "10pt")
             .attr("font-weight", "bold")
             .text("x");
@@ -122,8 +118,9 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             self.chart.append('path')
             .datum(self.data)
             .attr('stroke', 'black')
-            .attr('fill', 'none')
-            .attr('d', self.line);
+            //.attr('fill', 'none')
+            .attr('fill', 'black')
+            .attr('d', self.area);
 
         }
     }
