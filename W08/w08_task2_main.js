@@ -60,8 +60,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
     
             self.yaxis_group = self.chart.append('g')
             //.attr('transform', `translate(0, 30)`);
+
             
-            //self.line = d3.line()
             //.x(d => d.x )
             //.y(d => d.y );
             //.x(self.data, d => d.x )
@@ -84,6 +84,10 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
         render() {
 
             let self = this;
+
+            self.line = d3.line()
+            .x(function(d) { return self.xscale(d.x); })
+            .y(function(d) { return self.yscale(d.y); })
 
             self.svg.append("text")
             .attr("fill", "black")
@@ -115,11 +119,10 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .text("y");
 
             self.chart.append('path')
-            //.datum(self.data)
+            .datum(self.data)
             .attr('stroke', 'black')
             .attr('fill', 'none')
-            .attr('d', d3.line().x(self.xscale)
-            .y(self.yscale));
+            .attr('d', self.line);
 
         }
     }
