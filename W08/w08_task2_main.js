@@ -4,9 +4,9 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
 
         var config = {
             parent: '#drawing_region',
-            width: 500,
+            width: 400,
             height: 250,
-            margin: {top:60, right:10, bottom:50, left:80}
+            margin: {top:60, right:10, bottom:50, left:50}
         };
 
         const barchart_plot = new DrawingLine( config, data );
@@ -102,7 +102,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .call( self.xaxis )
             .append("text")
             .attr("fill", "black")
-			.attr("x", 410)
+			.attr("x", 200)
 			.attr("y", 40)
             .attr("font-size", "10pt")
             .attr("font-weight", "bold")
@@ -113,7 +113,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .append("text")
             .attr("fill", "black")
 			.attr("x", -150)
-			.attr("y", -55)
+			.attr("y", -20)
             .attr("transform", "rotate(-90)")
             .attr("font-size", "10pt")
             .attr("font-weight", "bold")
