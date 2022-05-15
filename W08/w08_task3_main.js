@@ -87,7 +87,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
 
             self.chart.append("text")
             .attr("fill", "white")
-            .attr("transform", function(d) { return "translate(" + self.text.centroid(self.data) + ")"; })
+            .attr("transform", function(d) { return "translate(" + self.text.centroid + ")"; })
             //.attr("transform", d => `translate(${arc.centroid(d)})`)
             .attr("dy", "5px")
             .attr("font", "10px")
