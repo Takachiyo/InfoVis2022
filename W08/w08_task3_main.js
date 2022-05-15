@@ -55,6 +55,10 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
             self.arc = d3.arc()
             .innerRadius(0)
             .outerRadius(self.radius);
+
+            self.text = d3.arc()
+            .outerRadius(self.radius - 30)
+            .innerRadius(self.radius - 30);
     
             self.render();
         }
@@ -62,7 +66,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
         render() {
 
             let self = this;
-
+/*
             self.svg.append("text")
             .attr("fill", "black")
 			.attr("x", 100)
@@ -70,6 +74,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
             .attr("font-size", "20pt")
             .attr("font-weight", "bold")
             .text("2015年度 近畿地方の人口");
+            */
 
             self.chart.selectAll('pie')
             .data( self.pie(self.data) )
@@ -79,6 +84,14 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
             .attr('fill', 'black')
             .attr('stroke', 'white')
             .style('stroke-width', '2px');
+
+            self.chart.append("text")
+            .attr("fill", "black")
+            .attr("transform", function(d) { return "translate(" + self.text.centroid(self.data) + ")"; })
+            .attr("dy", "5px")
+            .attr("font", "10px")
+            .attr("text-anchor", "middle")
+            .text(function(d) { return self.data.label; });
 
         }
     }
