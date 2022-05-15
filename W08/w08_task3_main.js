@@ -5,7 +5,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
         var config = {
             parent: '#drawing_region',
             width: 400,
-            height: 250,
+            height: 400,
             margin: {top:60, right:10, bottom:50, left:10}
         };
 
@@ -62,11 +62,11 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
 
             self.svg.append("text")
             .attr("fill", "black")
-			.attr("x", 140)
+			.attr("x", 130)
 			.attr("y", 25)
             .attr("font-size", "20pt")
             .attr("font-weight", "bold")
-            .text("W08-Example2");
+            .text("2015年度 近畿地方の人口");
 
             self.chart.selectAll('pie')
             .data( self.pie(self.data) )
