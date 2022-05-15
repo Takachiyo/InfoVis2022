@@ -65,7 +65,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
 
             self.svg.append("text")
             .attr("fill", "black")
-			.attr("x", 130)
+			.attr("x", 100)
 			.attr("y", 25)
             .attr("font-size", "20pt")
             .attr("font-weight", "bold")
