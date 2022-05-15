@@ -57,7 +57,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
         }
     
         render() {
-            
+
             let self = this;
 
             self.svg.append("text")
@@ -69,7 +69,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
             .text("W08-Example2");
 
             self.chart.selectAll('pie')
-            .data( pie(self.data) )
+            .data( self.pie(self.data) )
             .enter()
             .append('path')
             .attr('d', self.arc)
