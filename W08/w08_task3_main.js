@@ -9,8 +9,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
             margin: {top:60, right:10, bottom:50, left:50}
         };
 
-        const barchart_plot = new PieChart( config, data );
-        barchart_plot.update();
+        const piechart_plot = new PieChart( config, data );
+        piechart_plot.update();
     })
     .catch( error => {
             console.log( error );
@@ -32,7 +32,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
         init() {
             let self = this;
 
-            self.radius = Math.min( width, height ) / 2,
+            self.radius = Math.min( self.config.width, self.config.height ) / 2,
     
             self.svg = d3.select( self.config.parent )
                 .attr('width', self.config.width)
