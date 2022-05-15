@@ -85,13 +85,13 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
             .attr('stroke', 'white')
             .style('stroke-width', '2px');
 
-            self.chart.append("text")
+            self.svg.append("text")
             .attr("fill", "white")
-            .attr("transform", function(d) { return "translate(" + self.text.centroid(d) + ")"; })
+            .attr("transform", function(d) { return "translate(" + self.text.centroid(self.data) + ")"; })
             .attr("dy", "5px")
             .attr("font", "10px")
             .attr("text-anchor", "middle")
-            .text(function(d) { return d.data.label; });
+            .text(function(d) { return self.data.label; });
 
         }
     }
