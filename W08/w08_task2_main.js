@@ -77,7 +77,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
 
             self.xscale.domain([0, d3.max(self.data, d => d.x)])
 
-            self.yscale.domain([0, d3.max(self.data, d => d.x)])
+            self.yscale.domain([d3.max(self.data, d => d.y),0])
     
             self.render();
         }
