@@ -91,7 +91,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
             .attr("dy", "5px")
             .attr("font", "10px")
             .attr("text-anchor", "middle")
-            .text(function(d) { return self.data.label; });
+            .text(self.data.map(d => d.label));
 
         }
     }
