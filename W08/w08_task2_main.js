@@ -85,7 +85,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .x(function(d) { return self.xscale(d.x); })
             .y1(function(d) { return self.yscale(d.y); })
             //.y0( 0 );
-            .y0( d3.max(data, d => d.y ) + 10 );
+            .y0( d3.max(self.data, d => d.y ) + 10 );
 
             self.svg.append("text")
             .attr("fill", "black")
