@@ -84,7 +84,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             self.area = d3.area()
             .x(function(d) { return self.xscale(d.x); })
             .y1(function(d) { return self.yscale(d.y); })
-            .y0( 0 );
+            .y0( d3.max(self.yscale) );
+            //.y0( 0 );
             
 
             self.svg.append("text")
@@ -99,7 +100,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .call( self.xaxis )
             .append("text")
             .attr("fill", "black")
-			.attr("x", 160)
+			.attr("x", 170)
 			.attr("y", 30)
             .attr("font-size", "10pt")
             .attr("font-weight", "bold")
@@ -110,7 +111,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .append("text")
             .attr("fill", "black")
 			.attr("x", -70)
-			.attr("y", -40)
+			.attr("y", -35)
             .attr("transform", "rotate(-90)")
             .attr("font-size", "10pt")
             .attr("font-weight", "bold")
