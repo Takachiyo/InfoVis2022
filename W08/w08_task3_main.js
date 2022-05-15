@@ -42,7 +42,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
             self.inner_height = self.config.height - self.config.margin.top - self.config.margin.bottom;
     
             self.chart = self.svg.append('g')
-            .attr('transform', `translate(${self.config.inner_width/2}, ${self.config.inner_height/2})`);
+            .attr('transform', `translate(${self.config.width/2}, ${self.config.height/2})`);
 
         }
     
