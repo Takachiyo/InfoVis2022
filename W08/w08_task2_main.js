@@ -53,6 +53,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
             .tickSizeOuter(0);
     
             self.yaxis = d3.axisLeft( self.yscale )
+            .ticks(5)
             .tickSizeOuter(0);
     
             self.xaxis_group = self.chart.append('g')
@@ -76,7 +77,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data2.csv")
 
             self.xscale.domain([0, d3.max(self.data, d => d.x)])
 
-            self.yscale.domain(self.data.map(d => d.y))
+            self.yscale.domain([0, d3.max(self.data, d => d.x)])
     
             self.render();
         }
