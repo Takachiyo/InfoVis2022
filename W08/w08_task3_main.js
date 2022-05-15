@@ -6,7 +6,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
             parent: '#drawing_region',
             width: 400,
             height: 250,
-            margin: {top:60, right:10, bottom:50, left:50}
+            margin: {top:60, right:10, bottom:50, left:10}
         };
 
         const piechart_plot = new PieChart( config, data );
@@ -39,7 +39,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
                 .attr('height', self.config.height);
     
             self.chart = self.svg.append('g')
-            .attr('transform', `translate(${self.config.width/2}, ${self.config.height/2})`);
+            .attr('transform', `translate(${self.config.margin.left + self.config.width/2}, ${self.config.margin.top + self.config.height/2})`);
 
         }
     
