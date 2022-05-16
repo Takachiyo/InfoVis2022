@@ -85,7 +85,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
             .enter()
             .append('path')
             .attr('d', self.arc)
-            .attr('fill', 'black')
+            .attr('fill', function(d){ return(self.color(d.label)) })
             .attr('stroke', 'white')
             .style('stroke-width', '2px');
 
