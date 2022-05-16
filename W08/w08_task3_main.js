@@ -108,7 +108,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
             .attr("fill", "white")
             .attr("transform", function(d) { return "translate(" + self.arc.centroid(d) + ")";  })
             .style("text-anchor", "middle")
-            .style("font-size", 17)
+            .style("font-size", 17);
 
         }
     }
