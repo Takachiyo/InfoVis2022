@@ -53,7 +53,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
             .value( d => d.value );
             
             self.arc = d3.arc()
-            .innerRadius(self.radius/2)
+            .innerRadius(0)
             .outerRadius(self.radius);
 
             self.text = d3.arc()
