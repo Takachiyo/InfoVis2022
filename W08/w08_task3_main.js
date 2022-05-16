@@ -54,7 +54,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
             let self = this;
 
             self.pie = d3.pie()
-            .value( d => d.value );
+            //.value( d => d.value );
+            .value(function(d) {return d.value; })
 
             self.data_ready = self.pie(d3.entries(self.data))
             
