@@ -78,7 +78,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
             
             
             self.chart.selectAll('mySlices')
-            .data( self.pie() )
+            .data( self.pie(self.data) )
             .enter()
             .append('text')
             .text(function(d){ return d.label})
