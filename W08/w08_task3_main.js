@@ -76,7 +76,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
             .attr('stroke', 'white')
             .style('stroke-width', '2px');
             
-            
+            /*
             self.chart.selectAll('mySlices')
             .data( self.pie(self.data) )
             .enter()
@@ -86,6 +86,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
             .attr("transform", function(d) { return "translate(" + self.arc.centroid(d) + ")";  })
             .style("text-anchor", "middle")
             .style("font-size", 17);
+            */
 
         }
     }
