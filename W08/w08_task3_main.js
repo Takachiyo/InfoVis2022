@@ -57,7 +57,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
             //.value( d => d.value );
             .value(function(d) {return d.value; })
 
-            self.data_ready = self.pie(d3.entries(self.data))
+            self.data_ready = self.pie(self.data)
             
             self.arc = d3.arc()
             .innerRadius(0)
