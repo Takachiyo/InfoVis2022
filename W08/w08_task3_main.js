@@ -69,6 +69,10 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
 
             let self = this;
 
+            var arcGenerator = d3.arc()
+  .innerRadius(0)
+  .outerRadius(radius)
+
             self.chart.selectAll('pie')
             .data( self.pie(self.data) )
             .enter()
@@ -90,12 +94,12 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
             */
             
             self.chart.selectAll('mySlices')
-            .data(self.data)
+            .data(self.pie)
             .enter()
             .append('text')
             .text(function(d){ return d.label})
             .attr("fill", "black")
-            .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")";  })
+            .attr("transform", function(d) { return "translate(" + self.arc.centroid(d) + ")";  })
             .style("text-anchor", "middle")
             .style("font-size", 17);
             
