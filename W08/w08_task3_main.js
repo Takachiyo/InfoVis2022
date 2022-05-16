@@ -68,15 +68,6 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
         render() {
 
             let self = this;
-/*
-            self.svg.append("text")
-            .attr("fill", "black")
-			.attr("x", 100)
-			.attr("y", 25)
-            .attr("font-size", "20pt")
-            .attr("font-weight", "bold")
-            .text("2015年度 近畿地方の人口");
-            */
 
             self.chart.selectAll('pie')
             .data( self.pie(self.data) )
@@ -98,15 +89,13 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
             .text(function(d) { return d.label; });
             */
             
-
-            
             self.chart.selectAll('mySlices')
             .data(self.data)
             .enter()
             .append('text')
             .text(function(d){ return d.label})
             .attr("fill", "black")
-            .attr("transform", function(d) { return "translate(" + self.arc.centroid(d.value) + ")";  })
+            .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")";  })
             .style("text-anchor", "middle")
             .style("font-size", 17);
             
