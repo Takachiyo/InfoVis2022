@@ -100,6 +100,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
             .text(function(d) { return d.label; });
             //.text("2015年度 近畿地方の人口");
             */
+
+            //
             self.chart.selectAll('mySlices')
             .data(self.data)
             .enter()
