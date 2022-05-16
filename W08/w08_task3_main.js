@@ -106,7 +106,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
             .append('text')
             .text(function(d){ return d.label})
             .attr("fill", "black")
-            .attr("transform", function(d) { return "translate(" + self.arc.centroid(d) + ")";  })
+            .attr("transform", function(d) { return "translate(" + self.arc.centroid(d.value) + ")";  })
             .style("text-anchor", "middle")
             .style("font-size", 17);
             
