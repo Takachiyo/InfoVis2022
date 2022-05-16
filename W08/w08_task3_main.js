@@ -60,9 +60,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
             .innerRadius(0)
             .outerRadius(self.radius);
 
-            self.text = d3.arc()
-            .outerRadius(self.radius - 60)
-            .innerRadius(self.radius - 60);
+            
     
             self.render();
         }
@@ -102,7 +100,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
             
 
             
-            self.svg.selectAll('mySlices')
+            self.chart.selectAll('mySlices')
             .data(self.data)
             .enter()
             .append('text')
