@@ -59,10 +59,6 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
             self.arc = d3.arc()
             .innerRadius(0)
             .outerRadius(self.radius); 
-
-            self.text = d3.arc()
-            .outerRadius(self.radius - 30)
-            .innerRadius(self.radius - 30);
     
             self.render();
         }
@@ -87,7 +83,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
             .append('text')
             .text(function(d){ return d.label})
             .attr("fill", "black")
-            .attr("transform", function(d) { return "translate(" + self.text.centroid(d) + ")";  })
+            .attr("transform", function(d) { return "translate(" + self.arc.centroid(d) + ")";  })
             .style("text-anchor", "middle")
             .style("font-size", 17);
 
