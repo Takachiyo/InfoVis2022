@@ -61,8 +61,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
             .outerRadius(self.radius); 
 
             self.text = d3.arc()
-            .outerRadius(radius - 30)
-            .innerRadius(radius - 30);
+            .outerRadius(self.radius - 30)
+            .innerRadius(self.radius - 30);
     
             self.render();
         }
