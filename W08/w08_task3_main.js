@@ -55,6 +55,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
 
             self.pie = d3.pie()
             .value( d => d.value );
+
+            self.data_ready = self.pie(d3.entries(self.data))
             
             self.arc = d3.arc()
             .innerRadius(0)
@@ -72,7 +74,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
            
 
             self.chart.selectAll('pie')
-            .data( self.pie(self.data) )
+            //.data( self.pie(self.data) )
+            .data( self.data_ready )
             .enter()
             .append('path')
             .attr('d', self.arc)
@@ -92,7 +95,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
             */
             
             self.chart.selectAll('mySlices')
-            .data(self.pie(self.data))
+            .data(self.data_ready)
             .enter()
             .append('text')
             .text(function(d){ return d.label})
