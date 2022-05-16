@@ -85,6 +85,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
             .attr('stroke', 'white')
             .style('stroke-width', '2px');
 
+            /*
             self.chart.append("text")
             .attr("fill", "white")
             .attr("transform", function(d) { return "translate(" + self.text.centroid(self.data.value) + ")"; })
@@ -94,6 +95,15 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
             .attr("text-anchor", "middle")
             .text(function(d) { return self.data.label; });
             //.text("2015年度 近畿地方の人口");
+            */
+            self.chart.selectAll('mySlices')
+            .data(self.data)
+            .enter()
+            .append('text')
+            .text(function(d){ return "grp " + d.data.key})
+            .attr("transform", function(d) { return "translate(" + self.arc.centroid(d) + ")";  })
+            .style("text-anchor", "middle")
+            .style("font-size", 17)
 
         }
     }
