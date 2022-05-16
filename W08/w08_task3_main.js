@@ -33,10 +33,6 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
             let self = this;
 
             self.radius = Math.min( self.config.width, self.config.height ) / 2;
-
-            self.color = d3.scaleOrdinal()
-            .domain(self.data)
-            .range(d3.schemeSet2);
     
             self.svg = d3.select( self.config.parent )
                 .attr('width', self.config.width)
@@ -54,49 +50,35 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
             let self = this;
 
             self.pie = d3.pie()
-            //.value( d => d.value );
-            .value(function(d) {return d.value; })
+            .value( d => d.value );
 
-            self.data_ready = self.pie(self.data)
+            self.color = d3.scaleOrdinal()
+            .domain(self.data)
+            .range(d3.schemeSet2);
             
             self.arc = d3.arc()
             .innerRadius(0)
-            .outerRadius(self.radius);
-
-            
+            .outerRadius(self.radius); 
     
             self.render();
         }
     
         render() {
 
-            let self = this;
-
-           
+            let self = this;       
 
             self.chart.selectAll('pie')
-            //.data( self.pie(self.data) )
-            .data( self.data_ready )
+            .data( self.pie(self.data) )
             .enter()
             .append('path')
             .attr('d', self.arc)
             .attr('fill', function(d){ return(self.color(d.index)) })
             .attr('stroke', 'white')
             .style('stroke-width', '2px');
-
-            /*
-            self.chart.append("text")
-            .attr("fill", "black")
-            .attr("transform", function(d) { return "translate(" + self.text.centroid(d.value) + ")"; })
-            //.attr("transform", d => `translate(${arc.centroid(d)})`)
-            .attr("dy", "5px")
-            .attr("font", "10px")
-            .attr("text-anchor", "middle")
-            .text(function(d) { return d.label; });
-            */
+            
             
             self.chart.selectAll('mySlices')
-            .data(self.data_ready)
+            .data( self.pie() )
             .enter()
             .append('text')
             .text(function(d){ return d.label})
@@ -104,7 +86,6 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
             .attr("transform", function(d) { return "translate(" + self.arc.centroid(d) + ")";  })
             .style("text-anchor", "middle")
             .style("font-size", 17);
-            
 
         }
     }
