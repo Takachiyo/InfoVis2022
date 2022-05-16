@@ -89,28 +89,28 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
             .attr('stroke', 'white')
             .style('stroke-width', '2px');
 
-            /*
+            
             self.chart.append("text")
-            .attr("fill", "white")
+            .attr("fill", "black")
             .attr("transform", function(d) { return "translate(" + self.text.centroid(d.value) + ")"; })
             //.attr("transform", d => `translate(${arc.centroid(d)})`)
             .attr("dy", "5px")
             .attr("font", "10px")
             .attr("text-anchor", "middle")
             .text(function(d) { return d.label; });
-            //.text("2015年度 近畿地方の人口");
-            */
+            
 
-            //
+            /*
             self.chart.selectAll('mySlices')
             .data(self.data)
             .enter()
             .append('text')
             .text(function(d){ return d.label})
-            .attr("fill", "white")
+            .attr("fill", "black")
             .attr("transform", function(d) { return "translate(" + self.arc.centroid(d) + ")";  })
             .style("text-anchor", "middle")
             .style("font-size", 17);
+            */
 
         }
     }
