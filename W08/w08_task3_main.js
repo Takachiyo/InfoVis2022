@@ -32,7 +32,11 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
         init() {
             let self = this;
 
-            self.radius = Math.min( self.config.width, self.config.height ) / 2,
+            self.radius = Math.min( self.config.width, self.config.height ) / 2;
+
+            self.color = d3.scaleOrdinal()
+            .domain(self.data)
+            .range(d3.schemeSet2);
     
             self.svg = d3.select( self.config.parent )
                 .attr('width', self.config.width)
@@ -100,7 +104,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data1.csv")
             .data(self.data)
             .enter()
             .append('text')
-            .text(function(d){ return d.self.data.label})
+            .text(function(d){ return d.label})
             .attr("fill", "white")
             .attr("transform", function(d) { return "translate(" + self.arc.centroid(d) + ")";  })
             .style("text-anchor", "middle")
