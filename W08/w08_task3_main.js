@@ -69,9 +69,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W08/data3.csv")
 
             let self = this;
 
-            var arcGenerator = d3.arc()
-  .innerRadius(0)
-  .outerRadius(radius)
+           
 
             self.chart.selectAll('pie')
             .data( self.pie(self.data) )
