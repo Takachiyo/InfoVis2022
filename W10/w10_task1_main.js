@@ -15,8 +15,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
         d3.select('#reverse')
         .on('click', d => {
             data.reverse();
-            const barchart_plot = new BarChart( config, data );
-            barchart_plot.update();
+            const barchart_plot2 = new BarChart( config, data );
+            barchart_plot2.update();
         });
     })
     .catch( error => {
