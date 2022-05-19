@@ -12,12 +12,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
         const barchart_plot = new BarChart( config, data );
         barchart_plot.update();
 
-        d3.select('#reverse')
-        .on('click', d => {
-        data.reverse();
-        const barchart_plot2 = new BarChart( config, data );
-        barchart_plot2.update();
-    });
+        
     
     })
     .catch( error => {
@@ -100,6 +95,13 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
             
             self.yaxis_group
             .call( self.yaxis );
+
+            self.button = d3.select('#reverse')
+            .on('click', d => {
+                self.data.reverse();
+                const barchart_plot2 = new BarChart( config, data );
+                barchart_plot2.update()
+            });
 
         }
     }
