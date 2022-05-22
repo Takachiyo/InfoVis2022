@@ -106,7 +106,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
 
             self.data.reverse();
 
-            self.init();
+            //self.init();
 
             self.update();
 
