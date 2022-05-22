@@ -1,16 +1,9 @@
-var svg = d3.select('#drawing_region');
+
 
 d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
     .then( data => {
         data.forEach( d => { d.value = +d.value; });
-
-        
-        update( data );
-        
-        
-        
-        
-        
+        update( data );       
     
     })
     .catch( error => {
@@ -21,7 +14,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
         let padding = 10;
         let height = 20
         
-        svg.selectAll("rect")
+        d3.select('#drawing_region').selectAll("rect")
         .data(data)
         .join("rect")
         .attr("x", padding)
