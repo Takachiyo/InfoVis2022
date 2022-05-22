@@ -19,13 +19,16 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
             .attr("y", (d,i) => padding + i * ( height + padding ))
             .attr("width", d => d)
             .attr("height", height);
-        }
-        
-        d3.select('#reverse')
-        .on('click', d => {
+
+            //d3.select('#reverse')
+            d3.selectAll("button")
+            .on('click', d => {
             data.reverse();
             update(data);
         });
+        }
+        
+        
     
     })
     .catch( error => {
