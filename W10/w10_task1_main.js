@@ -93,12 +93,13 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
             //.enter()
             //.append("rect")
             .join("rect")
-            .transition().duration(1000)
+            
             .attr("x", 0)
             .attr("y", d => self.yscale(d.label))
+            .attr("height", self.yscale.bandwidth())
+            .transition().duration(1000)
+            .attr("width", d => self.xscale(d.value));
             
-            .attr("width", d => self.xscale(d.value))
-            .attr("height", self.yscale.bandwidth());
 
             self.xaxis_group
             .call( self.xaxis );
