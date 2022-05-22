@@ -104,7 +104,9 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
         reverse(){
             let self = this;
 
-            this.data = this.data.reverse();
+            self.data = self.data.reverse();
+
+            console.log(delf.data)
 
             //self.init();
 
