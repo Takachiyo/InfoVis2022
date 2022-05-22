@@ -14,13 +14,18 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
 
         d3.select('#reverse')
         .on('click', d => {
-            //data.reverse();
-            
-
             barchart_plot.reverse();
-            console.log(data);
-        //barchart_plot.reverse();
-    });
+        });
+
+        d3.select('#ascending')
+        .on('click', d => {
+            barchart_plot.ascending();
+        });
+
+        d3.select('#descending')
+        .on('click', d => {
+            barchart_plot.descending();
+        });
 
     })
     .catch( error => {
@@ -115,4 +120,29 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
             self.update();
             self.render();
         }
+
+        ascending(){
+            let self = this;
+            self.data.sort(function(a, b) {
+                if(a.value < b.value) return 1;
+                if(a.value > b.value) return -1;
+                return 0;
+              });
+            self.update();
+            self.render();
+
+        }
+
+        descending(){
+            let self = this;
+            self.data.sort(function(a, b) {
+                if(a.name < b.name) return -1;
+                if(a.name > b.name) return 1;
+                return 0;
+              });
+            self.update();
+            self.render();
+        }
+
+
     }
