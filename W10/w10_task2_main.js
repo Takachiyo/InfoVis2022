@@ -6,7 +6,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data2.csv")
             parent: '#drawing_region',
             width: 256,
             height: 256,
-            margin: {top:10, right:10, bottom:20, left:10}
+            margin: {top:10, right:10, bottom:20, left:60}
         };
 
         const scatter_plot = new ScatterPlot( config, data );
@@ -43,16 +43,26 @@ class ScatterPlot {
         self.inner_height = self.config.height - self.config.margin.top - self.config.margin.bottom;
 
         self.xscale = d3.scaleLinear()
-            .range( [0, self.inner_width] );
+            .range( [-30, self.inner_width] );
 
         self.yscale = d3.scaleLinear()
             .range( [0, self.inner_height] );
 
         self.xaxis = d3.axisBottom( self.xscale )
-            .ticks(6);
+            .ticks(7)
+            .tickSize(5,5)
+            .tickPadding(5);
+
+        self.yaxis = d3.axisLeft( self.yscale )
+            .ticks(7)
+            .tickSize(5,5)
+            .tickPadding(5);
 
         self.xaxis_group = self.chart.append('g')
-            .attr('transform', `translate(0, ${self.inner_height})`);
+            .attr('transform', `translate(0, ${self.inner_height })`);
+
+        self.yaxis_group = self.chart.append('g')
+            .attr('transform', `translate(-30, 0)`);
     }
 
     update() {
@@ -60,11 +70,11 @@ class ScatterPlot {
 
         const xmin = d3.min( self.data, d => d.x );
         const xmax = d3.max( self.data, d => d.x );
-        self.xscale.domain( [xmin, xmax] );
+        self.xscale.domain( [0, xmax+20] );
 
         const ymin = d3.min( self.data, d => d.y );
         const ymax = d3.max( self.data, d => d.y );
-        self.yscale.domain( [ymin, ymax] );
+        self.yscale.domain( [ymax+10, 0] );
 
         self.render();
     }
@@ -79,12 +89,12 @@ class ScatterPlot {
             .attr("cx", d => self.xscale( d.x ) )
             .attr("cy", d => self.yscale( d.y ) )
             .attr("r", d => d.r );
-
+            
 
         self.xaxis_group
-            .call( self.xaxis );
+            .call( self.xaxis )
 
         self.yaxis_group
-            .call( self.yaxis );
+            .call( self.yaxis )
     }
 }
