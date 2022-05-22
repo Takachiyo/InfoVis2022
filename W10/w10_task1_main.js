@@ -14,8 +14,10 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
 
         d3.select('#reverse')
         .on('click', d => {
-        data.reverse();
-        barchart_plot.update();
+        barchart_plot.remove();
+        data2 = data.reverse();
+        const barchart_plot2 = new BarChart( config, data2 );
+        barchart_plot2.update();
     });
 
     })
@@ -100,5 +102,9 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
             self.yaxis_group
             .call( self.yaxis );
 
+        }
+
+        remove(){
+            d3.select( self.config.parent ).selectAll("svg").remove();
         }
     }
