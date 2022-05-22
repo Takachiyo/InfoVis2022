@@ -6,7 +6,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
             parent: '#drawing_region',
             width: 512,
             height: 256,
-            margin: {top:60, right:10, bottom:50, left:80}
+            margin: {top:30, right:10, bottom:50, left:60}
         };
 
         const barchart_plot = new BarChart( config, data );
