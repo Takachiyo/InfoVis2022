@@ -18,6 +18,12 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
 
         update( data );
 
+        d3.select('#reverse')
+    .on('click', d => {
+        data.reverse();
+        update(data);
+    });
+
 })
 .catch( error => {
         console.log( error );
