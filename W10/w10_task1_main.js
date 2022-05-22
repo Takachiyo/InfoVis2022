@@ -91,7 +91,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
             .append("rect")
             .attr("x", 0)
             .attr("y", d => self.yscale(d.label))
-            .attr("width", d => self.xscale(d.value))
+            .attr("width", d => self.xscale(self.d.value))
             .attr("height", self.yscale.bandwidth());
 
             self.xaxis_group
