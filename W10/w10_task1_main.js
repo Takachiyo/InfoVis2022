@@ -4,8 +4,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
 
         var config = {
             parent: '#drawing_region',
-            width: 1000,
-            height: 500,
+            width: 512,
+            height: 256,
             margin: {top:60, right:10, bottom:50, left:80}
         };
 
@@ -78,14 +78,6 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
 
             let self = this;
 
-            self.svg.append("text")
-            .attr("fill", "black")
-			.attr("x", 200)
-			.attr("y", 25)
-            .attr("font-size", "20pt")
-            .attr("font-weight", "bold")
-            .text("2015年度 近畿地方の人口");
-
             self.chart.selectAll("rect")
             .data(self.data)
             .enter()
@@ -96,25 +88,10 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
             .attr("height", self.yscale.bandwidth());
 
             self.xaxis_group
-            .call( self.xaxis )
-            .append("text")
-            .attr("fill", "black")
-			.attr("x", 410)
-			.attr("y", 40)
-            .attr("font-size", "10pt")
-            .attr("font-weight", "bold")
-            .text("人口数");
+            .call( self.xaxis );
             
             self.yaxis_group
-            .call( self.yaxis )
-            .append("text")
-            .attr("fill", "black")
-			.attr("x", -150)
-			.attr("y", -55)
-            .attr("transform", "rotate(-90)")
-            .attr("font-size", "10pt")
-            .attr("font-weight", "bold")
-            .text("府県名");
+            .call( self.yaxis );
 
         }
     }
