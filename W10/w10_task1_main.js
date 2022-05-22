@@ -81,10 +81,9 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
         }
     
         render() {
+            let self = this;
 
             console.log(self.data)
-
-            let self = this;
 
             self.chart.selectAll("rect")
             .data(self.data)
