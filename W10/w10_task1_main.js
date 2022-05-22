@@ -62,7 +62,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
             .paddingInner(0.1);
     
             self.xaxis = d3.axisBottom( self.xscale )
-            .ticks(5)
+            //.ticks(5)
             .tickSizeOuter(0);
     
             self.yaxis = d3.axisLeft( self.yscale )
@@ -94,7 +94,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
             .append("rect")
             .attr("x", 0)
             .attr("y", d => self.yscale(d.label))
-            .attr("width", d => self.xscale(d.value))
+            //.attr("width", d => self.xscale(d.value))
+            .attr("width", function(d) {return self.xscale(d.value);})
             .attr("height", self.yscale.bandwidth());
 
             self.xaxis_group
@@ -108,16 +109,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
         reverse(){
             let self = this;
 
-            //self.data.reverse();
-
-            self.data = [
-                {label:'Egg', value:80},
-                {label:'Doughnut', value:120},
-                {label:'Cookie', value:50},
-                {label:'Banana', value:200},
-                {label:'Apple', value:100}
-                
-            ]
+            self.data.reverse();
 
             //console.log(self.data)
 
