@@ -14,7 +14,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
 
         d3.select('#reverse')
         .on('click', d => {
-            data.reverse();
+            
             barchart_plot.update();
             console.log(data);
         //barchart_plot.reverse();
@@ -86,14 +86,15 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
         render() {
             let self = this;
 
+            self.data.reverse();
+
             self.chart.selectAll("rect")
             .data(self.data)
             .enter()
             .append("rect")
             .attr("x", 0)
             .attr("y", d => self.yscale(d.label))
-            //.attr("width", d => self.xscale(d.value))
-            .attr("width", d => d.value)
+            .attr("width", d => self.xscale(d.value))
             .attr("height", self.yscale.bandwidth());
 
             self.xaxis_group
