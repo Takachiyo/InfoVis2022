@@ -12,7 +12,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
                 .join("rect")
                 .attr("x", padding)
                 .attr("y", (d,i) => padding + i * ( height + padding ))
-                .attr("width", d => d)
+                .attr("width", d => d.value)
                 .attr("height", height);
         }
 
