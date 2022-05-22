@@ -14,7 +14,16 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
 
         d3.select('#reverse')
         .on('click', d => {
-            data.reverse();
+            //data.reverse();
+            data = [
+                {label:'Egg', value:80},
+                {label:'Doughnut', value:120},
+                {label:'Cookie', value:50},
+                {label:'Banana', value:200},
+                {label:'Apple', value:100}
+                
+            ]
+
             barchart_plot.update();
             console.log(data);
         //barchart_plot.reverse();
