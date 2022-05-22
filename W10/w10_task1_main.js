@@ -14,7 +14,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
 
         d3.select('#reverse')
         .on('click', d => {
-            
+            data.reverse();
             barchart_plot.update();
             console.log(data);
         //barchart_plot.reverse();
@@ -52,6 +52,12 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
             self.inner_width = self.config.width - self.config.margin.left - self.config.margin.right;
             self.inner_height = self.config.height - self.config.margin.top - self.config.margin.bottom;
     
+            
+        }
+    
+        update() {
+            let self = this;
+
             self.xscale = d3.scaleLinear()
             .range([0, self.inner_width]);
     
@@ -71,10 +77,9 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
     
             self.yaxis_group = self.chart.append('g')
             //.attr('transform', `translate(0, 30)`);
-        }
-    
-        update() {
-            let self = this;
+
+
+
 
             self.xscale.domain([0, d3.max(self.data, d => d.value)])
 
@@ -85,8 +90,6 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data1.csv")
     
         render() {
             let self = this;
-
-            self.data.reverse();
 
             self.chart.selectAll("rect")
             .data(self.data)
