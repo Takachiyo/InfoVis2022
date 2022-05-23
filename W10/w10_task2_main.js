@@ -6,7 +6,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data2.csv")
             parent: '#drawing_region',
             width: 256,
             height: 256,
-            margin: {top:50, right:10, bottom:40, left:50}
+            margin: {top:60, right:10, bottom:40, left:50}
         };
 
         const scatter_plot = new ScatterPlot( config, data );
@@ -71,11 +71,11 @@ class ScatterPlot {
 
         const xmin = d3.min( self.data, d => d.x );
         const xmax = d3.max( self.data, d => d.x );
-        self.xscale.domain( [0, xmax+20] );
+        self.xscale.domain( [0, xmax] );
 
         const ymin = d3.min( self.data, d => d.y );
         const ymax = d3.max( self.data, d => d.y );
-        self.yscale.domain( [ymax+10, 0] );
+        self.yscale.domain( [ymax, 0] );
 
         self.render();
     }
