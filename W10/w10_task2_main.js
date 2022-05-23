@@ -83,6 +83,14 @@ class ScatterPlot {
     render() {
         let self = this;
 
+        self.svg.append("text")
+            .attr("fill", "black")
+			.attr("x", 80)
+			.attr("y", 25)
+            .attr("font-size", "20pt")
+            .attr("font-weight", "bold")
+            .text("Chart Title");
+
         self.chart.selectAll("circle")
             .data(self.data)
             .enter()
