@@ -6,7 +6,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data2.csv")
             parent: '#drawing_region',
             width: 256,
             height: 256,
-            margin: {top:10, right:10, bottom:20, left:60}
+            margin: {top:50, right:10, bottom:40, left:80}
         };
 
         const scatter_plot = new ScatterPlot( config, data );
@@ -109,8 +109,24 @@ class ScatterPlot {
 
         self.xaxis_group
             .call( self.xaxis )
+            .append("text")
+            .attr("fill", "black")
+			.attr("x", 70)
+			.attr("y", 40)
+            .attr("font-size", "10pt")
+            .attr("font-weight", "bold")
+            .text("X-Label");
 
         self.yaxis_group
             .call( self.yaxis )
+            .call( self.yaxis )
+            .append("text")
+            .attr("fill", "black")
+			.attr("x", -50)
+			.attr("y", -30)
+            .attr("transform", "rotate(-90)")
+            .attr("font-size", "10pt")
+            .attr("font-weight", "bold")
+            .text("Y-Label");
     }
 }
