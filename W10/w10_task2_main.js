@@ -6,7 +6,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/W10/data2.csv")
             parent: '#drawing_region',
             width: 256,
             height: 256,
-            margin: {top:50, right:10, bottom:40, left:80}
+            margin: {top:50, right:10, bottom:40, left:50}
         };
 
         const scatter_plot = new ScatterPlot( config, data );
@@ -63,7 +63,7 @@ class ScatterPlot {
             .attr('transform', `translate(0, ${self.inner_height })`);
 
         self.yaxis_group = self.chart.append('g')
-            .attr('transform', `translate(0, 0)`);
+            //.attr('transform', `translate(0, 0)`);
     }
 
     update() {
