@@ -85,7 +85,7 @@ class ScatterPlot {
 
         self.svg.append("text")
             .attr("fill", "black")
-			.attr("x", 70)
+			.attr("x", 60)
 			.attr("y", 25)
             .attr("font-size", "20pt")
             .attr("font-weight", "bold")
