@@ -123,7 +123,7 @@ class ScatterPlot {
             .call( self.xaxis )
             .append("text")
             .attr("fill", "black")
-			.attr("x", 70)
+			.attr("x", 90)
 			.attr("y", 40)
             .attr("font-size", "10pt")
             .attr("font-weight", "bold")
