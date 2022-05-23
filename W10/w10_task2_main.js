@@ -89,7 +89,7 @@ class ScatterPlot {
 			.attr("y", 25)
             .attr("font-size", "20pt")
             .attr("font-weight", "bold")
-            .text("Chart Title");
+            .text("Sample Data");
 
         self.chart.selectAll("circle")
             .data(self.data)
