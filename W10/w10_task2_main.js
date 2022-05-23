@@ -112,6 +112,10 @@ class ScatterPlot {
             .on('mouseleave', () => {
                 d3.select('#tooltip')
                     .style('opacity', 0);
+            })
+            .on("click",function(){
+                d3.select(this)
+                .style("fill","red");
             });
             
 
