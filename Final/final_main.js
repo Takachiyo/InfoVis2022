@@ -15,7 +15,7 @@ var svg = d3.select("body")
          .attr("width", w)
          .attr("height", h);
 
-d3.json("japan.json").then(function(json) {
+d3.json("japan.geojson").then(function(json) {
 
     svg.selectAll("path")   //都道府県の領域データをpathで描画
        .data(json.features)
