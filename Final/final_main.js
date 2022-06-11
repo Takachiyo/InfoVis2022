@@ -5,7 +5,7 @@ var svg = d3.select("body")
   .append("svg")
   .attr({width:w, height:h});
 
-var projection = d3.geo.albers()
+var projection = d3.geo.mercator()
   .center([-15, 36])
   .rotate([210, 0])
   .parallels([50, 60])
