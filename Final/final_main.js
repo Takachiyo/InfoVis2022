@@ -1,28 +1,48 @@
-//画面の幅と高さ
-var w = 600;
+var w = 800;
 var h = 600;
-var scale = 1200; //地図のスケール
- 
-var projection = d3.geoMercator()
-   .center([ 136.0, 35.6 ])
-   .translate([w/2, h/2])
-   .scale(scale);
-
-var path = d3.geoPath().projection(projection);
 
 var svg = d3.select("body")
-         .append("svg")
-         .attr("width", w)
-         .attr("height", h);
+  .append("svg")
+  .attr({width:w, height:h});
 
-d3.json("japan.geojson").then(function(json) {
+var projection = d3.geo.albers()
+  .center([-15, 36])
+  .rotate([210, 0])
+  .parallels([50, 60])
+  .translate([w/2, h/2])
+  .scale([1500]);
+var path = d3.geo.path().projection(projection);
 
-    svg.selectAll("path")   //都道府県の領域データをpathで描画
-       .data(json.features)
-       .enter()
-       .append("path")
-       .attr("d", path)
-       .style("stroke", "gray")
-       .style("stroke-width", 0.25)
-       .style("fill", "blue");
- });
+d3.csv("日平均気温(2019).csv", function(data) {
+  d3.json("japan.json", function(json) {
+    for(var i=0; i<data.length; i++) {
+      for(var j=0; j<json.features.length; j++) {
+        if( data[i].都道府県名 == json.features[j].properties.name_local ) {
+          json.features[j].properties.日平均気温 = data[i].日平均気温;
+        }
+      }
+    }
+
+    svg.selectAll("path")
+      .data(json.features)
+      .enter()
+      .append("path")
+      .attr("d", path)
+      .style("fill", function(feat) {
+        var 日平均気温 = feat.properties.日平均気温;
+        if( 日平均気温 > 4000 )
+          var c = "darkred";
+        else if( p日平均気温 > 3000 )
+          var c = "orangered";
+        else if( 日平均気温 > 2500 )
+          var c = "orange";
+        else if( 日平均気温 > 2250 )
+          var c = "gold";
+        else
+          var c = "black";
+        return c;
+      })
+      .style("stroke", "gray")
+      .style("stroke-width", "0.5px");
+  });
+});
