@@ -1,6 +1,6 @@
 var width = 400;
 var height = 600;
-var margin = 100;
+var margin = 50;
 
 var svg = d3.select("body")
 .append("svg")
@@ -39,7 +39,6 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/Final/日平均気温(2019).csv"
             }
          }
       }
-   
    
    chart.selectAll("path")
       .data(json.features)
