@@ -3,7 +3,7 @@ class BarChart {
         this.config = {
             parent: config.parent,
             width: config.width || 400,
-            height: config.height || 400,
+            height: config.height || 1000,
             margin: config.margin || {top:10, right:10, bottom:10, left:10},
             xlabel: config.xlabel || '',
         };
