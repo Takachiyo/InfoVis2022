@@ -49,7 +49,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/Final/日平均気温(2019).csv"
       .enter()
       .append("path")
       .attr("d", path)
-      .style("stroke", "gray")
+      //.style("stroke", "gray")
+      .style("stroke", "black")
       .style("stroke-width", 0.25)
       .style("fill", function(d){
          return "hsl(0, 100%, " + (colorScale(d.properties.temperature)) + "%)";
