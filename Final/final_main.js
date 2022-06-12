@@ -11,7 +11,7 @@ var projection = d3.geoMercator()
   //.parallels([50, 60])
   .translate([w/2, h/2])
   .scale([1500]);
-var path = d3.geo.path().projection(projection);
+var path = d3.geoPath(projection);
 
 d3.csv("日平均気温(2019).csv", function(data) {
   d3.json("japan.json", function(json) {
