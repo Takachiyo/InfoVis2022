@@ -53,7 +53,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/Final/アイスクリームの�
       .style("stroke", "black")
       .style("stroke-width", 0.25)
       .style("fill", function(d){
-         return "hsl(0, 100%, " + (colorScale(d.properties.value)) + "%)";
+         return "hsl(0, 100%, " + (colorScale2(d.properties.value)) + "%)";
          //return "hsl(0, " + (colorScale(d.properties.population)) + "%, 50%)";
          //return colorScale(d.properties.value);
        });
