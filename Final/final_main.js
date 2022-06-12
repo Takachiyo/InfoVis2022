@@ -19,6 +19,6 @@ d3.csv("日平均気温(2019).csv", function(data) {
           .enter()
           .append("path")
           .attr("d", path)
-          .style("fill","red") //styleの記述を追加し単色で地図を塗りつぶす
+          //.style("fill","red") //styleの記述を追加し単色で地図を塗りつぶす
   });
 });
