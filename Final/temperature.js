@@ -15,7 +15,7 @@ var path = d3.geoPath().projection(projection);
 
 d3.csv("https://takachiyo.github.io/InfoVis2022/Final/日平均気温(2019).csv")
 .then( data => {
-   data.forEach( d => { d.value = +d.value; });
+   data.forEach( d => { d.temperature = +d.temperature; });
 
    var colorScale = d3.scaleLinear()
                .domain([d3.min(data, function(d) { return parseInt(d.temperature);})
