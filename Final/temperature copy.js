@@ -6,12 +6,9 @@ var svg = d3.select("body")
 .attr("width", width)
 .attr("height", height);
 
-var chart = svg.append('g')
-    .attr('transform', `translate(0, ${margin})`);
-
 var projection = d3.geoMercator()
       .center([ 136.0, 35.6 ])
-      .translate([200, 300])
+      .translate([200, 250])
       .scale(1000)
 
 var path = d3.geoPath().projection(projection);
@@ -40,7 +37,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/Final/日平均気温(2019).csv"
       }
    
    
-   chart.selectAll("path")
+   svg.selectAll("path")
       .data(json.features)
       .enter()
       .append("path")
