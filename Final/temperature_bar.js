@@ -9,8 +9,8 @@ var svg3 = d3.select('#drawing_region')
 var chart = svg3.append('g')
     .attr('transform', `translate(${margin3.left}, ${margin3.top})`);
 
-const inner_width3 = width3 - margin.left3 - margin3.right;
-const inner_height3 = height3 - margin.top3 - margin3.bottom;
+const inner_width3 = width3 - margin3.left - margin3.right;
+const inner_height3 = height3 - margin3.top - margin3.bottom;
 
 d3.csv("https://takachiyo.github.io/InfoVis2022/Final/日平均気温(2019).csv")
 .then( data => {
