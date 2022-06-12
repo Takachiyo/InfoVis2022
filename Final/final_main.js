@@ -7,8 +7,8 @@ var svg = d3.select("body")
 
 var projection = d3.geoMercator()
   .center([-15, 36])
-  .rotate([210, 0])
-  .parallels([50, 60])
+  //.rotate([210, 0])
+  //.parallels([50, 60])
   .translate([w/2, h/2])
   .scale([1500]);
 var path = d3.geo.path().projection(projection);
