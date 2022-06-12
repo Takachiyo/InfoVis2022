@@ -53,12 +53,11 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/Final/日平均気温(2019).csv"
      
      svg.append("text")
      .attr("fill", "black")
-     .attr("x", 0)
+     .attr("x", 200)
      .attr("y", 0)
      .attr("font-size", "10pt")
      .attr("font-weight", "bold")
      .text("都道府県別日平均気温 2019年度");
-
 
    });
 });
