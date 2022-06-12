@@ -1,5 +1,5 @@
 var width3 = 256;
-var height3 = 256;
+var height3 = 400;
 var margin3 = {top:10, right:10, bottom:20, left:60};
 
 var svg3 = d3.select('#drawing_region')
