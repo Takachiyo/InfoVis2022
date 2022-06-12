@@ -50,17 +50,13 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/Final/日平均気温(2019).csv"
       .on('mouseover', (e,d) => {
          d3.select('#tooltip')
              .style('opacity', 1)
-             .html(`<div class="tooltip-label">${d.properties.label}</div>${d.properties.value}`);
+             .html(`<div class="tooltip-label">${d.properties.value}`);
      })
      .on('mousemove', (e) => {
          const padding = 10;
          d3.select('#tooltip')
              .style('left', (e.pageX + padding) + 'px')
              .style('top', (e.pageY + padding) + 'px');
-     })
-     .on('mouseleave', () => {
-         d3.select('#tooltip')
-             .style('opacity', 0);
      });
 
 
