@@ -22,7 +22,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/Final/日平均気温(2019).csv"
                   , d3.max(data, function(d) { return parseInt(d.temperature);})])
                .range([100, 50]);
 
-   d3.json("https://takachiyo.github.io/InfoVis2022/Final/japan.geojson").then(function(json) {
+   d3.json("https://takachiyo.github.io/InfoVis2022/Final/japan1.geojson").then(function(json) {
       for (var i = 0; i < data.length; i++) {
          var dataPref = data[i].area;            //都道府県の名前を取得
          var dataTemperature = parseFloat(data[i].temperature);   //人口データを数値変換

@@ -22,7 +22,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/Final/アイスクリームの�
                   , d3.max(data, function(d) { return parseInt(d.value);})])
                .range([100, 50]);
 
-   d3.json("https://takachiyo.github.io/InfoVis2022/Final/japan.geojson").then(function(json) {
+   d3.json("https://takachiyo.github.io/InfoVis2022/Final/japan2.geojson").then(function(json) {
       for (var i = 0; i < data.length; i++) {
          var dataPref2 = data[i].area;            //都道府県の名前を取得
          var dataValue = parseFloat(data[i].value);   //人口データを数値変換
@@ -48,8 +48,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/Final/アイスクリームの�
       .data(json.features)
       .enter()
       .append("path")
-      .attr("d", path)
-      //.style("stroke", "gray")
+      .attr("d", path2)
       .style("stroke", "black")
       .style("stroke-width", 0.25)
       .style("fill", function(d){
