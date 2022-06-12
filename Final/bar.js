@@ -44,25 +44,11 @@ class BarChart {
 
         self.yaxis_group = self.chart.append('g');
 
-        self.svg.append('text')
-            .style('font-size', '20px')
-            .style('font-weight', 'bold')
-            .attr('text-anchor', 'middle')
-            .attr('x', self.config.width / 2)
-            .attr('y', self.config.margin.top)
-
         const xlabel_space = 40;
         self.svg.append('text')
             .attr('x', self.config.width / 2)
             .attr('y', self.inner_height + self.config.margin.top + xlabel_space)
             .text( self.config.xlabel );
-
-        self.svg.append('text')
-            .attr('transform', `rotate(-90)`)
-            .attr('y', self.config.margin.left)
-            .attr('x', -(self.config.height / 2))
-            .attr('text-anchor', 'middle')
-            .attr('dy', '1em')
     }
 
     update() {
