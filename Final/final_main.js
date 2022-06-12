@@ -9,11 +9,14 @@ var svg = d3.select("body")
 var projection = d3.geoMercator()
       .center([ 136.0, 35.6 ])
       .translate([width/2, height/2])
-      .scale(1300)
+      .scale(1200)
 
-var path = d3.geoPath(projection);
+var path = d3.geoPath().projection(projection);
 
-//d3.csv("日平均気温(2019).csv", function(data) {
+d3.csv("https://takachiyo.github.io/InfoVis2022/Final/日平均気温(2019).csv")
+.then( data => {
+   data.forEach( d => { d.value = +d.value; });
+   
    d3.json("https://takachiyo.github.io/InfoVis2022/Final/japan.geojson").then(function(json) {
       svg.append("g").selectAll("path")
           .data(json.features)
@@ -21,4 +24,4 @@ var path = d3.geoPath(projection);
           .append("path")
           .attr("d", path)
   });
-//});
+});
