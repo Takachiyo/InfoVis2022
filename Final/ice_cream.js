@@ -1,6 +1,6 @@
 var width2 = 400;
 var height2 = 600;
-var margin = 100;
+
 
 var svg2 = d3.select("body")
 .append("svg")
