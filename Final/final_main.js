@@ -1,5 +1,5 @@
-var width = 500;
-var height = 500;
+var width = 600;
+var height = 600;
 
 var svg = d3.select("body")
 .append("svg")
@@ -8,7 +8,8 @@ var svg = d3.select("body")
 
 var projection = d3.geoMercator()
       .center([ 136.0, 35.6 ])
-      .scale(100000)
+      .translate([width/2, height/2])
+      .scale(16000)
 
 var path = d3.geoPath(projection);
 
