@@ -59,8 +59,9 @@ class BarChart {
         const xmax = d3.max(self.data, d => d.value) + space;
         self.xscale.domain([xmin, xmax]);
 
-        const items = self.data.map(d => d.label);
-        self.yscale.domain(items);
+        //const items = self.data.map(d => d.label);
+        //self.yscale.domain(items);
+        self.yscale.domain(self.data.map(d => d.label))
 
         self.render();
     }
