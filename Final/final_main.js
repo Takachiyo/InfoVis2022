@@ -3,7 +3,8 @@ var h = 600;
 
 var svg = d3.select("body")
   .append("svg")
-  .attr({width:w, height:h});
+  .attr("width", width)
+  .attr("height", height);
 
 var projection = d3.geoMercator()
 .center([136, 35.5])
