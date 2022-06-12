@@ -47,6 +47,6 @@ chart.selectAll("rect").data(data).enter()
     .attr("x", 0)
     .attr("y", d => yscale(d.label))
     .attr("width", d => xscale(d.temperature))
-    .attr("height", yscale.bandwidth());
+    .attr("height", yscale3.bandwidth());
 
 });
