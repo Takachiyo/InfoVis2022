@@ -1,14 +1,10 @@
 var width = 400;
 var height = 600;
-var margin = 50;
 
 var svg = d3.select("body")
 .append("svg")
 .attr("width", width)
 .attr("height", height);
-
-var chart = svg.append('g')
-    .attr('transform', `translate(0, ${margin})`);
 
 var projection = d3.geoMercator()
       .center([ 136.0, 35.6 ])
@@ -40,7 +36,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/Final/日平均気温(2019).csv"
          }
       }
    
-   chart.selectAll("path")
+   svg.selectAll("path")
       .data(json.features)
       .enter()
       .append("path")
@@ -50,16 +46,6 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/Final/日平均気温(2019).csv"
       .style("fill", function(d){
          return "hsl(0, 100%, " + (colorScale(d.properties.value)) + "%)";
        });
-     
-       /*
-     svg.append("text")
-     .attr("fill", "black")
-     .attr("x", 150)
-     .attr("y", 25)
-     .attr("font-size", "10pt")
-     .attr("font-weight", "bold")
-     .text("都道府県別日平均気温 2019年度");
-     */
 
    });
 });
