@@ -1,10 +1,10 @@
-var w = 800;
-var h = 600;
+var width = 500;
+var height = 500;
 
 var svg = d3.select("body")
-  .append("svg")
-  .attr("width", w)
-  .attr("height", h);
+.append("svg")
+.attr("width", width)
+.attr("height", height);
 
 var projection = d3.geoMercator()
 .center([136, 35.5])
