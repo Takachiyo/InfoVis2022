@@ -8,7 +8,7 @@ var svg2 = d3.select("body")
 
 var projection2 = d3.geoMercator()
       .center([ 136.0, 35.6 ])
-      .translate([200, 275])
+      .translate([width2/2, height2/2])
       .scale(1000);
 
 var path2 = d3.geoPath().projection(projection2);
