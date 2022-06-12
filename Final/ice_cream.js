@@ -5,6 +5,7 @@ var svg = d3.select("body")
 .append("svg")
 .attr("width", width)
 .attr("height", height);
+translate([width, height])
 
 var projection = d3.geoMercator()
       .center([ 136.0, 35.6 ])
