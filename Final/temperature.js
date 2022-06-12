@@ -12,7 +12,7 @@ var chart = svg.append('g')
 
 var projection = d3.geoMercator()
       .center([ 136.0, 35.6 ])
-      .translate([200, 300])
+      .translate([200, 350])
       .scale(1000)
 
 var path = d3.geoPath().projection(projection);
