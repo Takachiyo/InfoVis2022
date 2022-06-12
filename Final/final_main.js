@@ -13,7 +13,7 @@ var projection = d3.geoMercator()
 var path = d3.geoPath(projection);
 
 //d3.csv("日平均気温(2019).csv", function(data) {
-   d3.json("japan.json").then(function(json) {
+   d3.json("https://takachiyo.github.io/InfoVis2022/Final/japan.geojson").then(function(json) {
       svg.append("g").selectAll("path")
           .data(json.features)
           .enter()
