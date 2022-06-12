@@ -8,12 +8,12 @@ var svg = d3.select("body")
 
 var projection = d3.geoMercator()
       .center([ 136.0, 35.6 ])
-      .translate([width, height])
+      .translate([width/2, height/2])
       .scale(1000);
 
 var path = d3.geoPath().projection(projection);
 
-d3.csv("https://takachiyo.github.io/InfoVis2022/FinalTask/日平均気温(2019).csv")
+d3.csv("https://takachiyo.github.io/InfoVis2022/FinalTask/年平均気温(2019).csv")
 .then( data => {
    data.forEach( d => { d.value = +d.value; });
 

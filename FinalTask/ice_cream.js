@@ -13,7 +13,7 @@ var projection2 = d3.geoMercator()
 
 var path2 = d3.geoPath().projection(projection2);
 
-d3.csv("https://takachiyo.github.io/InfoVis2022/FinalTask/アイスクリームの消費金額(2019).csv")
+d3.csv("https://takachiyo.github.io/InfoVis2022/FinalTask/アイスクリームの年間消費金額(2019).csv")
 .then( data => {
    data.forEach( d => { d.value = +d.value; });
 
