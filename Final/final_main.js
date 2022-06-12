@@ -56,7 +56,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/Final/日平均気温(2019).csv"
       .style("stroke", "gray")
       .style("stroke-width", 0.25)
       .style("fill", function(d){
-         return "hsl(0, 100%, " + (colorScale(d.properties.population)) + "%)";
+         return "hsl(0, 100%, " + (colorScale(d.properties.value)) + "%)";
          //return "hsl(0, " + (colorScale(d.properties.population)) + "%, 50%)";
        });
    });
