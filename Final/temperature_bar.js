@@ -6,7 +6,7 @@ var svg3 = d3.select('#drawing_region')
     .attr('width', width3)
     .attr('height', height3);
 
-var chart = svg3.append('g')
+var chart3 = svg3.append('g')
     .attr('transform', `translate(${margin3.left}, ${margin3.top})`);
 
 const inner_width3 = width3 - margin3.left - margin3.right;
@@ -34,15 +34,15 @@ const yaxis3 = d3.axisLeft( yscale3 )
       .tickSizeOuter(0);
 
 // Draw the axis
-const xaxis_group3 = chart.append('g')
+const xaxis_group3 = chart3.append('g')
       .attr('transform', `translate(0, ${inner_height3})`)
       .call( xaxis3 );
 
-const yaxis_group3 = chart.append('g')
+const yaxis_group3 = chart3.append('g')
       .call( yaxis3 );
 
 // Draw bars
-chart.selectAll("rect").data(data).enter()
+chart3.selectAll("rect").data(data).enter()
     .append("rect")
     .attr("x", 0)
     .attr("y", d => yscale(d.label))
