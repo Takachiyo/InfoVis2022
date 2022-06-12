@@ -1,24 +1,24 @@
 var width = 600;
 var height = 600;
 
-var svg = d3.select("body")
+var svg2 = d3.select("body")
 .append("svg")
 .attr("width", width)
 .attr("height", height);
 translate([width, height])
 
-var projection = d3.geoMercator()
+var projection2 = d3.geoMercator()
       .center([ 136.0, 35.6 ])
       .translate([width/2, height/2])
       .scale(1200)
 
-var path = d3.geoPath().projection(projection);
+var path2 = d3.geoPath().projection(projection);
 
 d3.csv("https://takachiyo.github.io/InfoVis2022/Final/アイスクリームの消費金額(2019).csv")
 .then( data => {
    data.forEach( d => { d.value = +d.value; });
 
-   var colorScale = d3.scaleLinear()
+   var colorScale2 = d3.scaleLinear()
                .domain([d3.min(data, function(d) { return parseInt(d.value);})
                   , d3.max(data, function(d) { return parseInt(d.value);})])
                .range([100, 50]);
