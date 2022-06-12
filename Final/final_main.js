@@ -20,8 +20,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/Final/日平均気温(2019).csv"
    var colorScale = d3.scaleLinear()
                .domain([d3.min(data, function(d) { return parseInt(d.value);})
                   , d3.max(data, function(d) { return parseInt(d.value);})])
-               .range([100, 50]);
-               //.range(["red", "blue"]);
+               //.range([100, 50]);
+               .range(["red", "blue"]);
 
 
 
@@ -57,9 +57,9 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/Final/日平均気温(2019).csv"
       .style("stroke", "gray")
       .style("stroke-width", 0.25)
       .style("fill", function(d){
-         return "hsl(0, 100%, " + (colorScale(d.properties.value)) + "%)";
+         //return "hsl(0, 100%, " + (colorScale(d.properties.value)) + "%)";
          //return "hsl(0, " + (colorScale(d.properties.population)) + "%, 50%)";
-         //return d3.interpolateBrBG(colorScale(d.properties.value));
+         return colorScale(d.properties.value);
        });
    });
 });
