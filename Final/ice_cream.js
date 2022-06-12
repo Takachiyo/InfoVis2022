@@ -1,17 +1,17 @@
-var width = 400;
-var height = 400;
+var width2 = 400;
+var height2 = 400;
 
 var svg2 = d3.select("body")
 .append("svg")
-.attr("width", width)
-.attr("height", height);
+.attr("width", width2)
+.attr("height", height2);
 
 var projection2 = d3.geoMercator()
       .center([ 136.0, 35.6 ])
-      .translate([width/2, height/2])
+      .translate([width2/2, height2/2])
       .scale(800)
 
-var path2 = d3.geoPath().projection(projection);
+var path2 = d3.geoPath().projection(projection2);
 
 d3.csv("https://takachiyo.github.io/InfoVis2022/Final/アイスクリームの消費金額(2019).csv")
 .then( data => {
@@ -24,15 +24,15 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/Final/アイスクリームの�
 
    d3.json("https://takachiyo.github.io/InfoVis2022/Final/japan.geojson").then(function(json) {
       for (var i = 0; i < data.length; i++) {
-         var dataPref = data[i].area;            //都道府県の名前を取得
+         var dataPref2 = data[i].area;            //都道府県の名前を取得
          var dataValue = parseFloat(data[i].value);   //人口データを数値変換
 
          //GeoJSONのデータの中で同じ都道府県名を検索
          for (var j = 0; j < json.features.length; j++) {
 
-            var jsonPref = json.features[j].properties.pref_j;
+            var jsonPref2 = json.features[j].properties.pref_j;
 
-            if (dataPref == jsonPref) {
+            if (dataPref2 == jsonPref2) {
 
                //見つけたら、JSONデータに人口データをコピー
                json.features[j].properties.value = dataValue;
@@ -44,7 +44,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/Final/アイスクリームの�
       }
    
    
-   svg.selectAll("path")   //都道府県の領域データをpathで描画
+   svg2.selectAll("path")   //都道府県の領域データをpathで描画
       .data(json.features)
       .enter()
       .append("path")
