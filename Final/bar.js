@@ -5,9 +5,7 @@ class BarChart {
             width: config.width || 256,
             height: config.height || 256,
             margin: config.margin || {top:10, right:10, bottom:10, left:10},
-            title: config.title || '',
             xlabel: config.xlabel || '',
-            ylabel: config.ylabel || ''
         };
         this.data = data;
         this.init();
@@ -46,14 +44,12 @@ class BarChart {
 
         self.yaxis_group = self.chart.append('g');
 
-        const title_space = 10;
         self.svg.append('text')
             .style('font-size', '20px')
             .style('font-weight', 'bold')
             .attr('text-anchor', 'middle')
             .attr('x', self.config.width / 2)
-            .attr('y', self.config.margin.top - title_space)
-            .text( self.config.title );
+            .attr('y', self.config.margin.top)
 
         const xlabel_space = 40;
         self.svg.append('text')
@@ -61,14 +57,12 @@ class BarChart {
             .attr('y', self.inner_height + self.config.margin.top + xlabel_space)
             .text( self.config.xlabel );
 
-        const ylabel_space = 90;
         self.svg.append('text')
             .attr('transform', `rotate(-90)`)
-            .attr('y', self.config.margin.left - ylabel_space)
+            .attr('y', self.config.margin.left)
             .attr('x', -(self.config.height / 2))
             .attr('text-anchor', 'middle')
             .attr('dy', '1em')
-            .text( self.config.ylabel );
     }
 
     update() {
