@@ -13,7 +13,7 @@ var projection = d3.geoMercator()
 
 var path = d3.geoPath().projection(projection);
 
-d3.csv("https://takachiyo.github.io/InfoVis2022/Final/日平均気温(2019).csv")
+d3.csv("https://takachiyo.github.io/InfoVis2022/FinalTask/日平均気温(2019).csv")
 .then( data => {
    data.forEach( d => { d.value = +d.value; });
 
@@ -22,7 +22,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/Final/日平均気温(2019).csv"
                   , d3.max(data, function(d) { return parseInt(d.value);})])
                .range([100, 50]);
 
-   d3.json("https://takachiyo.github.io/InfoVis2022/Final/japan1.geojson").then(function(json) {
+   d3.json("https://takachiyo.github.io/InfoVis2022/FinalTask/japan1.geojson").then(function(json) {
       for (var i = 0; i < data.length; i++) {
          var dataPref = data[i].area;
          var dataValue = parseFloat(data[i].value);
