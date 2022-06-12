@@ -45,8 +45,8 @@ const yaxis_group3 = chart3.append('g')
 chart3.selectAll("rect").data(data).enter()
     .append("rect")
     .attr("x", 0)
-    .attr("y", d => yscale(d.label))
-    .attr("width", d => xscale(d.temperature))
+    .attr("y", d => yscale3(d.label))
+    .attr("width", d => xscale3(d.temperature))
     .attr("height", yscale3.bandwidth());
 
 });
