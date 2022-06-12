@@ -27,10 +27,14 @@ class BarChart {
         self.xscale = d3.scaleLinear()
             .range([0, self.inner_width]);
 
-        self.yscale = d3.scaleBand()
+        /*self.yscale = d3.scaleBand()
             .range([0, self.inner_height])
             .paddingInner(0.2)
             .paddingOuter(0.1);
+            */
+            self.yscale = d3.scaleBand()
+            .range([0, self.inner_height])
+            .paddingInner(0.1);
 
         self.xaxis = d3.axisBottom(self.xscale)
             .ticks(5)
