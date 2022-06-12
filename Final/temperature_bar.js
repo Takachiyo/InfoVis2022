@@ -1,4 +1,4 @@
-var width3 = 256;
+var width3 = 400;
 var height3 = 400;
 var margin3 = {top:10, right:10, bottom:20, left:60};
 
