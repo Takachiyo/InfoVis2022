@@ -46,18 +46,7 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/Final/日平均気温(2019).csv"
       .style("stroke-width", 0.25)
       .style("fill", function(d){
          return "hsl(0, 100%, " + (colorScale(d.properties.value)) + "%)";
-       })
-      .on('mouseover', (e,d) => {
-         d3.select('#tooltip')
-             .style('opacity', 1)
-             .html(`<div class="tooltip-label">${d.properties.value}`);
-     })
-     .on('mousemove', (e) => {
-         const padding = 10;
-         d3.select('#tooltip')
-             .style('left', (e.pageX + padding) + 'px')
-             .style('top', (e.pageY + padding) + 'px');
-     });
+       });
      
      svg.append("text")
      .attr("fill", "black")
