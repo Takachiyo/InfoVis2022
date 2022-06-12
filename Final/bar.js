@@ -2,8 +2,8 @@ class BarChart {
     constructor (config, data) {
         this.config = {
             parent: config.parent,
-            width: config.width || 256,
-            height: config.height || 256,
+            width: config.width || 400,
+            height: config.height || 400,
             margin: config.margin || {top:10, right:10, bottom:10, left:10},
             xlabel: config.xlabel || '',
         };
