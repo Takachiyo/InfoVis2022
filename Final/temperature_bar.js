@@ -4,8 +4,8 @@ d3.csv("https://takachiyo.github.io/InfoVis2022/Final/日平均気温(2019).csv"
 
         var config = {
             parent: '#drawing_region',
-            width: 512,
-            height: 256,
+            width: 400,
+            height: 1000,
             margin: {top:25, right:10, bottom:50, left:100},
             xlabel: 'Tenperature',
         };
